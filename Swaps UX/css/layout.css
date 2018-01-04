@@ -1,0 +1,56 @@
+.lay-1-1{
+	display: flex;
+	flex-direction: row;
+}
+.lay-1-1 > div{
+	flex: 1;
+}
+.lay-1-2-A{
+	display: flex;
+	flex-direction: row;
+}
+.lay-1-2-A > div:nth-of-type(1){
+	min-width: 40px;
+	height: 40px;
+}
+.lay-1-2-A > div:nth-of-type(2){
+	height: 40px;
+	width: 100%;
+	margin-left: 10px;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.lay-1-2-A > div:nth-of-type(2) > div:nth-of-type(1){
+	display: flex;
+	flex-direction: row;
+}
+.lay-1-2-B{
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 7px;
+}
+.lay-1-2-B > div:nth-of-type(1){
+	min-width: 40px;
+	height: 40px;
+}
+.lay-1-2-B > div:nth-of-type(2){
+	min-height: 40px;
+	width: 100%;
+	margin-left: 10px;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.lay-1-2-B > div:nth-of-type(2) > div:nth-of-type(1){
+	display: flex;
+	flex-direction: row;
+}
+.lay-3{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.lay-3 > div{
+	flex: 1;
+}

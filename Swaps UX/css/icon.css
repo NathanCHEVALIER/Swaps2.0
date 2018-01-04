@@ -1,0 +1,187 @@
+
+
+/****** All size and layout ******/
+icon[size='30']{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 30px;
+	height: 30px;
+	background-image: url('../ressources/images/icons2.svg');
+	background-size: 30px auto;
+	background-origin: 20px 50px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+icon[size='30r']{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 30px;
+	height: 30px;
+	background-image: url('../ressources/images/icons2.svg');
+	background-size: 30px auto;
+	background-origin: 20px 50px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+icon[size='30l']{
+	position: absolute;
+	top: 0px;
+	left: 5px;
+	width: 30px;
+	height: 30px;
+	background-image: url('../ressources/images/icons2.svg');
+	background-size: 30px auto;
+	background-origin: 20px 50px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+icon[size='40']{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 40px;
+	height: 40px;
+	background-image: url('../ressources/images/icons2.svg');
+	background-size: 40px auto;
+	background-origin: 20px 50px;
+	background-repeat: no-repeat;
+	background-position: 0px -400px;
+	cursor: pointer;
+}
+icon[size='40r']{
+	position: absolute;
+	top: 50%;
+	right: 5px;
+	transform: translateY(-50%);
+	width: 40px;
+	height: 40px;
+	background-image: url('../ressources/images/icons2.svg');
+	background-size: 40px auto;
+	background-origin: 20px 50px;
+	background-repeat: no-repeat;
+	background-position: 0px -400px;
+	cursor: pointer;
+}
+icon[size='40l']{
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	transform: translateY(-50%);
+	width: 40px;
+	height: 40px;
+	background-image: url('../ressources/images/icons2.svg');
+	background-size: 40px auto;
+	background-origin: 20px 50px;
+	background-repeat: no-repeat;
+	background-position: 0px -400px;
+	cursor: pointer;
+}
+icon[size='50']{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 50px;
+	height: 50px;
+	background-image: url('../ressources/images/icons2.svg');
+	background-size: 50px auto;
+	background-origin: 20px 50px;
+	background-repeat: no-repeat;
+	background-position: 0px -500px;
+	cursor: pointer;
+}
+icon[size='50tr']{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 50px;
+	height: 50px;
+	background-image: url('../ressources/images/icons2.svg');
+	background-size: 50px auto;
+	background-origin: 20px 50px;
+	background-repeat: no-repeat;
+	background-position: 0px -500px;
+	cursor: pointer;
+}
+/****** Al 30 icons ******/
+icon[size^='30'][ic='comment']{
+	background-position: -4px -900px;
+}
+icon[size^='30'][ic='share']{
+	background-position: -4px -960px;
+}
+icon[size^='30'][ic='comment']:hover{
+	background-position: -4px -930px;
+}
+icon[size^='30'][ic='share']:hover{
+	background-position: -4px -990px;
+}
+icon[size^='30'][ic='cross-grey']{
+	background-position: -4px -1320px;
+}
+icon[size^='30'][ic='follow-red']{
+	background-position: -4px -1560px;
+}
+icon[size^='30'][ic='follow-white']{
+	background-position: -4px -1590px;
+}
+icon[size^='30'][ic='followed-red']{
+	background-position: -4px -1620px;
+}
+icon[size^='30'][ic='followed-white']{
+	background-position: -4px -1650px;
+}
+icon[size^='30'][ic='geopoint-grey']{
+	background-position: -4px -1680px;
+}
+icon[size^='30'][ic='points-classic']{
+	background-position: -4px -1830px;
+}
+icon[size^='30'][ic='valuation-yellow']{
+	background-position: -4px -1800px;
+}
+icon[size^='30'][ic='grille1-grey']{
+	background-position: 1px -1860px;
+}
+icon[size^='30'][ic='grille2-grey']{
+	background-position: 1px -1920px;
+}
+icon[size^='30'][ic='grille3-grey']{
+	background-position: 1px -1890px;
+}
+/****** Al 40 icons ******/
+icon[size^='40'][ic='cross-grey']{
+	background-position: 0px -1760px;
+}
+icon[size^='40'][ic='user-white']{
+	background-position: 1px -1361px;
+}
+icon[size^='40'][ic='user-follow']{
+	background-position: 1px -1523px;
+}
+icon[size^='40'][ic='user-follower']{
+	background-position: 1px -1443px;
+}
+icon[size^='40'][ic='timeline-red']{
+	background-position: 1px -2360px;
+}
+icon[size^='40'][ic='timeline-grey']{
+	background-position: 1px -2320px;
+}
+icon[size^='40'][ic='biography-grey']{
+	background-position: 1px -2280px;
+}
+/****** Al 50 icons ******/
+icon[size^='50'][ic='cross-white']{
+	background-position: 0px -2250px;
+}
+icon[size^='50'][ic='user-white']{
+	background-position: 1px -1700px;
+}
+icon[size^='50'][ic='pen-white']{
+	background-position: 1px -50px;
+}

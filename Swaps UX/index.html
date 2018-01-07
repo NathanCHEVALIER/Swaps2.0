@@ -23,7 +23,7 @@
             <div id="search">
                 <input type="search" placeholder="Recherchez par personnes...."/>
                 <div>
-                    <article class="membercard" size="1" >
+                    <!--<article class="membercard" size="1" >
                     <div class="moy-profil" style="background-image: url('/publicfiles/1/profil_8cc5a21f8012980c82cd9fcf3ea4e53016cf11a186cf9cbd5019c0efecb63600170718154836.png');"></div>
                     <div>
                         <div>
@@ -55,10 +55,10 @@
                             </button>
                         </div>
                     </div>
-                </article>
+                </article>-->
                 </div>
             </div>
-            <div id="dashboard" class="hide" class="lay-1-1">
+            <div id="dashboard" class="lay-1-1" >
                 <div>
                     <div class="lay-1-2-B notification" >
                         <div class="mini-profil" style="background-image: url('/publicfiles/1/profil_8cc5a21f8012980c82cd9fcf3ea4e53016cf11a186cf9cbd5019c0efecb63600170718154836.png');"></div>
@@ -497,12 +497,7 @@
                         </div>
                         <div>
                             <button class="followmember" >
-                                <icon size="30l" ic="follow-red"></icon>
-                                S'abonner
-                            </button>
-                            <button class="followedmember" >
-                                <icon size="30l" ic="followed-white"> </icon>
-                                Abonné
+                                <icon size="30l" ic="favori-white"></icon>
                             </button>
                         </div>
                     </div>
@@ -530,12 +525,7 @@
                         </div>
                         <div>
                             <button class="followmember" >
-                                <icon size="30l" ic="follow-red"></icon>
-                                S'abonner
-                            </button>
-                            <button class="followedmember" >
-                                <icon size="30l" ic="followed-white"> </icon>
-                                Abonné
+                                <icon size="30l" ic="favori-white"></icon>
                             </button>
                         </div>
                     </div>
@@ -563,12 +553,7 @@
                         </div>
                         <div>
                             <button class="followmember" >
-                                <icon size="30l" ic="follow-red"></icon>
-                                S'abonner
-                            </button>
-                            <button class="followedmember" >
-                                <icon size="30l" ic="followed-white"> </icon>
-                                Abonné
+                                <icon size="30l" ic="favori-white"></icon>
                             </button>
                         </div>
                     </div>
@@ -586,8 +571,7 @@
                     <div>
                         <h3>Pierre Dupont</h3>
                         <button class="followmember" >
-                            <icon size="30l" ic="follow-red"></icon>
-                            S'abonner
+                            <icon size="30l" ic="follow-white"></icon>
                         </button>
                     </div>
                     <div class="lay-1-1">
@@ -595,16 +579,16 @@
                             <icon size="40" ic="timeline-red"></icon>
                         </div>
                         <div>
-                            <icon size="40" ic="timeline-grey"></icon>
+                            <icon size="40" ic="activity-grey"></icon>
                         </div>
                         <div>
-                            <icon size="40" ic="timeline-grey"></icon>
+                            <icon size="40" ic="services-grey"></icon>
                         </div>
                         <div>
-                            <icon size="40" ic="timeline-grey"></icon>
+                            <icon size="40" ic="avis-grey"></icon>
                         </div>
                         <div>
-                            <icon size="40" ic="timeline-grey"></icon>
+                            <icon size="40" ic="biography-grey"></icon>
                         </div>
                     </div>
                 </article>
@@ -813,10 +797,36 @@
                 </article>
             </aside>
         </section>
-        <section flap="4">
+        <section flap="4" id="options">
             <aside>
                 Paramètres
                 <icon size="40r" ic="cross-grey" />
+            </aside>
+            <aside>
+                <div class="geopoint">
+                    <icon size="30l" ic="geopoint-grey"></icon>
+                    Paris, France
+                </div>
+                <div class="valuation">
+                    <icon size="30l" ic="valuation-yellow"></icon>
+                    4.7 pour 58 votes
+                </div>
+                <div class="pointscounter">
+                    <icon size="30l" ic="points-classic"></icon>
+                    37895 pts
+                </div>
+                <button class="followmember" >
+                    <icon size="30l" ic="follow-white"></icon>
+                </button>
+                <button class="followmember" >
+                    <icon size="30l" ic="followed-white"></icon>
+                </button>
+                <button class="followmember" >
+                    <icon size="30l" ic="favori-white"></icon>
+                </button>
+                <button class="airmess-contact" >
+                    <icon size="30l" ic="airmess-white"></icon>
+                </button>
             </aside>
         </section>
         <section flap="5">
@@ -826,7 +836,7 @@
             </aside>
         </section>
 
-        <div id="box" class="open">
+        <div id="box" class="">
             <icon size="50tr" ic="cross-white" ></icon>
             <aside>
             </aside>

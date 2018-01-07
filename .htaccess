@@ -1,0 +1,62 @@
+ErrorDocument 400 /400.html
+ErrorDocument 401 /401.html
+ErrorDocument 403 /interdit.html
+ErrorDocument 404 /notfound.html
+ErrorDocument 500 /500.html
+DirectoryIndex controllers/support.controller.php ressources/error/interdit.html
+
+Options +FollowSymlinks
+RewriteEngine on
+
+RewriteRule ^activation/([0-9]+)-([a-zA-Z0-9]+)/$ /controllers/inscription.controller.php?id=$1&cle=$2&type=active [L]
+RewriteRule ^activation/([0-9]+)-([a-zA-Z0-9]+)$ /controllers/inscription.controller.php?id=$1&cle=$2&type=active [L]
+
+RewriteRule ^inscription/$ /controllers/inscription.controller.php [L]
+RewriteRule ^inscription$ /controllers/inscription.controller.php [L]
+
+RewriteRule ^connexion/$ /controllers/connexion.controller.php [L]
+RewriteRule ^connexion$ /controllers/connexion.controller.php [L]
+
+RewriteRule ^deco/$ /controllers/connexion.controller.php?type=deco [L]
+RewriteRule ^deco$ /controllers/connexion.controller.php?type=deco [L]
+
+RewriteRule ^actu/$ /controllers/controller.php?page=1 [L]
+RewriteRule ^actu$ /controllers/controller.php?page=1 [L]
+
+RewriteRule ^fil-rouge/$ /controllers/controller.php?page=1 [L]
+RewriteRule ^fil-rouge$ /controllers/controller.php?page=1 [L]
+
+RewriteRule ^introduction/$ /controllers/controller.php?page=1 [L]
+RewriteRule ^introduction$ /controllers/controller.php?page=1 [L]
+
+RewriteRule ^membre/([0-9a-zA-Z._-]+)/$ /controllers/controller.php?page=1 [L]
+RewriteRule ^membre/([0-9a-zA-Z._-]+)$ /controllers/controller.php?page=1 [L]
+
+RewriteRule ^abonnements/$ /controllers/controller.php?page=1 [L]
+RewriteRule ^abonnements$ /controllers/controller.php?page=1 [L]
+
+RewriteRule ^abonnes/$ /controllers/controller.php?page=1 [L]
+RewriteRule ^abonnes$ /controllers/controller.php?page=1 [L]
+
+RewriteRule ^services/$ /controllers/controller.php?page=1 [L]
+RewriteRule ^services$ /controllers/controller.php?page=1 [L]
+
+RewriteRule ^activites/$ /controllers/controller.php?page=1 [L]
+RewriteRule ^activites$ /controllers/controller.php?page=1 [L]
+
+
+
+RewriteRule ^deco$ /controllers/connexion.controller.php?type=deco [L]
+RewriteRule ^deco/$ /controllers/connexion.controller.php?type=deco [L]
+
+
+RewriteRule ^conditions-generales-d-utilisation$ ressources/pdf/reglement.pdf [L]
+RewriteRule ^regle-de-confidentialitees$ ressources/pdf/regle_de_confidentialitees.pdf [L]
+
+#about
+
+RewriteRule ^contact$ /controllers/support.controller.php?page=contact [L]
+RewriteRule ^blog$ /controllers/support.controller.php?page=blog [L]
+RewriteRule ^financement$ /controllers/support.controller.php?page=financement [L]
+RewriteRule ^presentation$ /controllers/support.controller.php?page=presentation [L]
+RewriteRule ^sondage$ /controllers/support.controller.php?page=sondage [L]

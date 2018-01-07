@@ -1,0 +1,6 @@
+[0601/105705.139:ERROR:process_info.cc(343)] VirtualQueryEx: Accès refusé. (0x5)
+[0601/105705.193:ERROR:process_info.cc(564)] ReadMemoryInfo failed
+[0601/105705.193:ERROR:process_reader_win.cc(233)] ReadMemory at 0x7feec142968 of 12 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0601/105705.193:WARNING:process_snapshot_win.cc(68)] ReadMemory ExceptionInformation failed
+[0601/105705.193:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0601/105705.193:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: Tentative d’accès à un processus en cours d’arrêt.  (0xc000010a)

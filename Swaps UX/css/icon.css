@@ -1,5 +1,3 @@
-
-
 /****** All size and layout ******/
 icon[size='30']{
 	position: absolute;
@@ -129,11 +127,17 @@ icon[size^='30'][ic='follow-red']{
 icon[size^='30'][ic='follow-white']{
 	background-position: -4px -1590px;
 }
+icon[size^='30'][ic='airmess-white']{
+	background-position: -4px -1590px;
+}
 icon[size^='30'][ic='followed-red']{
 	background-position: -4px -1620px;
 }
 icon[size^='30'][ic='followed-white']{
 	background-position: -4px -1650px;
+}
+icon[size^='30'][ic='favori-white']{
+	background-position: -4px -840px;
 }
 icon[size^='30'][ic='geopoint-grey']{
 	background-position: -4px -1680px;
@@ -171,6 +175,15 @@ icon[size^='40'][ic='timeline-red']{
 }
 icon[size^='40'][ic='timeline-grey']{
 	background-position: 1px -2320px;
+}
+icon[size^='40'][ic='activity-grey']{
+	background-position: 1px -480px;
+}
+icon[size^='40'][ic='services-grey']{
+	background-position: 1px -320px;
+}
+icon[size^='40'][ic='avis-grey']{
+	background-position: 1px -160px;
 }
 icon[size^='40'][ic='biography-grey']{
 	background-position: 1px -2280px;

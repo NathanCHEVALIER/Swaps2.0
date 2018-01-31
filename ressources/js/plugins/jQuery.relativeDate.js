@@ -86,7 +86,7 @@
                 }
             }
 
-            $(this).append(relative);
+            $(this).html(" - " + relative);
         });
         return this;
     };

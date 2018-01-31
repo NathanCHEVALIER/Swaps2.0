@@ -1,7 +1,7 @@
 <?php
-require_once('classes/securite.class.php');
-$securite = new Securite();
+require_once('classes/membre.class.php');
+$membre = new Membre();
 
-echo($securite->creationtransmission());
+echo($membre->cryptpassword("test"));
 
 ?>

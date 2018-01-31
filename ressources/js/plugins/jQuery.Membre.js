@@ -6,30 +6,62 @@
             var thisObject = this;
                 
             $content = $('\
-                <article id="entete_membre" >\
-                    <div style="background-image: url(\'/publicfiles/' + membre['id'] + '/couv_' + membre['couv'] + '\');" >\
-                    </div>\
-                    <div>\
-                        <span>' + membre['pseudo'] + '</span>\
-                        <div></div>\
-                    </div>\
-                    <div>\
-                        <ul>\
-                            <li>Publications (35)</li>\
-                            <li>Abonnements (458)</li>\
-                            <li>Abonnés (295)</li>\
-                            <li>Avis</li>\
-                            <li>Informations</li>\
-                        </ul>\
-                        <span>\
-                        </span>\
-                        <p>' + membre['description'] + '\
-                        </p>\
-                    </div>\
-                    <div style="background-image: url(\'/publicfiles/' + membre['id'] + '/profil_' + membre['profil'] + '\');">\
-                    </div>\
-                </article>\
-                ');
+                    <article style="background-image: url(\'/publicfiles/' + membre['id'] + '/couv_' + membre['couv'] + '\');" >\
+                        <div class="big-profil" style="background-image: url(\'/publicfiles/' + membre['id'] + '/profil_' + membre['profil'] + '\');"></div>\
+                        <div>\
+                            <h3>' + membre['pseudo'] + '</h3>\
+                            <button class="followmember" >\
+                                <icon size="30l" ic="follow-white"></icon>\
+                            </button>\
+                        </div>\
+                        <div class="lay-1-1">\
+                            <div class="selected" >\
+                                <icon size="40" ic="timeline-red"></icon>\
+                            </div>\
+                            <div>\
+                                <icon size="40" ic="activity-grey"></icon>\
+                            </div>\
+                            <div>\
+                                <icon size="40" ic="services-grey"></icon>\
+                            </div>\
+                            <div>\
+                                <icon size="40" ic="avis-grey"></icon>\
+                            </div>\
+                            <div>\
+                                <icon size="40" ic="biography-grey"></icon>\
+                            </div>\
+                        </div>\
+                    </article>\
+                    <article class="lay-1-1" >\
+                        <div class="lay-3">\
+                            <div>\
+                                <div>\
+                                    <icon size="40l" ic="biography-grey"></icon>\
+                                    Bio & infos\
+                                </div>\
+                                <div>\
+                                    ' + membre['description'] + '\
+                                    <div class="geopoint">\
+                                        <icon size="30l" ic="geopoint-grey"></icon>\
+                                        Paris, France\
+                                    </div>\
+                                    <div class="valuation">\
+                                        <icon size="30l" ic="valuation-yellow"></icon>\
+                                        4.7 pour 58 votes\
+                                    </div>\
+                                    <div class="pointscounter">\
+                                        <icon size="30l" ic="points-classic"></icon>\
+                                        37895 pts\
+                                    </div>\
+                                </div>\
+                            </div>\
+                            <div></div>\
+                        </div>\
+                        <div>\
+                        </div>\
+                    </article>\
+                </aside>\
+            </section>');
 
             $(thisObject).append($content);
 
@@ -47,7 +79,7 @@
                     },
                     function(data, success){
                         for (var i = 0; i < data.length; i++) {
-                            $(thisObject).children("article:last-of-type()").publicationHydrator(data[i]);
+                            $(thisObject).find("article:eq(1) > div:eq(1)").publicationHydrator(data[i]);
                         }
                     },
                     "json"

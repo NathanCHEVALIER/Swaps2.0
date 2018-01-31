@@ -23,24 +23,25 @@
                 var type_publication = "propose rien"
             }
             
-            var $publication = $('<article id="publication_' + publication['id_publication'] + '" class="type' + publication['type_publication'] + '">\
+            var $publication = $('<article class="publication type' + publication['type_publication'] + '" id="publication_' + publication['id_publication'] + '" class="type1 ">\
+            <div>\
                 <aside>\
-                    <div>\
-                        <div class="mini-profil" style="background-image: url(\'/publicfiles/' + publication['id_auteur'] + '/profil_' + publication['profil_auteur'] + '\');" ></div>\
+                    <div class="lay-1-2-A" >\
+                        <div class="mini-profil" style="background-image: url(\'/publicfiles/' + publication['id_auteur'] + '/profil_' + publication['profil_auteur'] + '\');">\
+                        </div>\
                         <div>\
                             <div>\
-                                <span><a href="/membre/' + publication['pseudo_auteur'] + '">' + publication['pseudo_auteur'] + '</a> ' + type_publication + '</span><span datetime="' + publication['date_publication'] + '"> - </span>\
+                                <span><a href="/membre/' + publication['pseudo_auteur'] + '">' + publication['pseudo_auteur'] + '</a> ' + type_publication + '</span>\
+                                <span datetime="' + publication['date_publication'] + '"> - Il y a X jours</span>\
                             </div>\
-                            <span>3.7 pour 620k votes, 184k commentaires, 936k partages</span>\
+                            <div>5 pour 1 votes, 1 commentaires, pas de partages</div>\
                         </div>\
                     </div>\
                     <div>\
                         <p>' + publication['texte_publication'] + '</p>\
                         ' + image_publication + '\
                     </div>\
-                </aside>\
-                <aside>\
-                    <div id="stats-publication" >\
+                    <div class="lay-3">\
                         <div>\
                             <div>\
                                 <div class="star">\
@@ -61,35 +62,50 @@
                             </div>\
                         </div>\
                         <div>\
-                            <div class="comment">\
-                            </div>\
+                            <icon size="30" ic="comment" />\
                         </div>\
                         <div>\
-                            <div class="partage">\
-                            </div>\
+                            <icon size="30" ic="share" />\
                         </div>\
                     </div>\
-                    <div class="comm-publication"><!--Commentaires-->\
+                </aside>\
+                <aside>\
+                    <div>\
                         <div>\
                             <div>\
+                                <div class="lay-1-2-B" >\
+                                    <div class="mini-profil" style="background-image: url(\'/publicfiles/1/profil_8cc5a21f8012980c82cd9fcf3ea4e53016cf11a186cf9cbd5019c0efecb63600170718154836.png\');">\
+                                    </div>\
+                                    <div>\
+                                        <div>\
+                                            <span><a href="/membre/pierre.dupont">pierre.dupont</a></span>\
+                                            <span datetime="2017-11-04 18:41:11"> - Il y a 18 jours</span>\
+                                        </div>\
+                                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat</div>\
+                                    </div>\
+                                </div>\
+                                </div>\
+                            </div>\
+                            <div>\
+                                <icon size="30r" ic="cross-grey" />\
                             </div>\
                             <span></span>\
                         </div>\
                         <form method="post" action="">\
                             <div>\
-                                <textarea name="commentaire" placeholder="Commentez..." ></textarea>\
-                                <input type="submit" value="Send" />\
+                                <textarea name="commentaire" placeholder="Commentez..."></textarea>\
+                                <input value="Send" type="submit">\
                             </div>\
                             <div></div>\
                         </form>\
                     </div>\
                 </aside>\
-            </article>');
+            </div>\
+        </article>');
 
-            $(this).after($publication);
+            $(this).append($publication);
 
-            $('article#publication_' + publication['id_publication'] + ' > aside:eq(1)').height($('article#publication_' + publication['id_publication'] + ' > aside:eq(0)').height());
-            $('article#publication_' + publication['id_publication'] + ' > aside:eq(0) > div:eq(0) > div:eq(1) > div > span:eq(1)').relativeDate();
+            $('#publication_' + publication['id_publication'] + ' > div:eq(0) > aside:eq(0) > div:eq(0) > div:eq(1) > div > span:eq(1)').relativeDate();
             
             function statistiques(id, stats){
                 var votes = "Pas de votes";
@@ -107,7 +123,7 @@
 
                 var phrase = votes + ", " + comm + ", " + relai;
 
-                $('article#publication_' + id + ' > aside:eq(0) > div:eq(0) > div > span').html(phrase);
+                $("#publication_" + id).find("div:eq(0) > aside:eq(0) > div:eq(0) > div:eq(1) > div:eq(1)").html(phrase);
             }
 
             statistiques(publication['id_publication'], publication['stats_publication']);
@@ -159,23 +175,23 @@
                 );
             }
 
-            $('article#publication_' + publication['id_publication'] + ' .starr1').click( function(){
+            $('#publication_' + publication['id_publication'] + ' .starr1').click( function(){
                 sendvote($(this).parents("article").attr('id').substring(12), 1);
             });
 
-            $('article#publication_' + publication['id_publication'] + ' .starr2').click( function(){
+            $('#publication_' + publication['id_publication'] + ' .starr2').click( function(){
                 sendvote($(this).parents("article").attr('id').substring(12), 2);
             });
 
-            $('article#publication_' + publication['id_publication'] + ' .starr3').click( function(){
+            $('#publication_' + publication['id_publication'] + ' .starr3').click( function(){
                 sendvote($(this).parents("article").attr('id').substring(12), 3);
             });
 
-            $('article#publication_' + publication['id_publication'] + ' .starr4').click( function(){
+            $('#publication_' + publication['id_publication'] + ' .starr4').click( function(){
                 sendvote($(this).parents("article").attr('id').substring(12), 4);
             });
 
-            $('article#publication_' + publication['id_publication'] + ' .starr5').click( function(){
+            $('#publication_' + publication['id_publication'] + ' .starr5').click( function(){
                 sendvote($(this).parents("article").attr('id').substring(12), 5);
             });
 
@@ -201,9 +217,12 @@
                 );
             }
 
-            $('article#publication_' + publication['id_publication'] + ' .comment').click( function(){
-                $('article#publication_' + publication['id_publication'] + ' aside:eq(0) > div:eq(1)').toggleClass("full");
-                $('article#publication_' + publication['id_publication'] + ' aside:eq(1)').toggleClass("close");
+            $('article#publication_' + publication['id_publication'] + ' icon[ic="comment"]').click( function(){
+                $(this).parents(".publication").addClass("reverse");
+            });
+
+            $('article#publication_' + publication['id_publication'] + ' icon[ic="cross-grey"]').click( function(){
+                $(this).parents(".publication").removeClass("reverse");
             });
 
             $('article#publication_' + publication['id_publication'] + ' .comm-publication form input[type="submit"]').click( function(){
@@ -241,7 +260,7 @@
                 );
             }
 
-            loadcomment(publication['id_publication']);
+            //loadcomment(publication['id_publication']);
 
             function sendrelay(idpub, texte) {
                 $.post("/controllers/publication.controller.php",
@@ -284,9 +303,7 @@
             });
 
             $('article#publication_' + publication['id_publication'] + ' aside:eq(0) > div:eq(0) > div:eq(1) > div > span > a').click( function(){
-                var cible = $(this).attr('href');
-                var page = cible.toString().split("/");
-                $("section").PageMembre(page[2]);
+                $(this).ClickOnLink();
                 return false;
             });
 

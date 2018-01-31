@@ -1,4 +1,4 @@
-section > article{
+aside > article{
 	display: flex;
 	width: 100%;
 	background-color: #ffffff;
@@ -9,35 +9,35 @@ section > article{
 	flex-wrap: wrap;
 	overflow: hidden;
 }
-section > article > aside h2 {
+aside > article > aside h2 {
 	color: #af0000;
 	text-align: center;
 	margin: 10px;
 	font-weight: 400;
 }
-section > article > aside > p{
+aside > article > aside > p{
 	
 	text-align: justify;
 	width: 76%;
 	margin-left: 12%;
 }
-section > article > aside:nth-of-type(1){
+aside > article > aside:nth-of-type(1){
 	align-self: baseline;
 	display: inline-block;
 	min-height: 260px;
 	flex: 2;
 }
-section > article > aside:nth-of-type(1) > div:nth-of-type(1){
+aside > article > aside:nth-of-type(1) > div:nth-of-type(1){
 	display: flex;
 	width: calc(100% - 15px);
 	height: 45px;
 	margin: 5px 5px 3px 1vw;
 }
-section > article > aside:nth-of-type(1) > div:nth-of-type(1) > div.mini-profil{
+aside > article > aside:nth-of-type(1) > div:nth-of-type(1) > div.mini-profil{
 	min-width: 40px;
 	height: 40px;
 }
-section > article > aside:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2){
+aside > article > aside:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2){
 	height: 40px;
 	width: 100%;
 	margin-left: 10px;
@@ -45,66 +45,66 @@ section > article > aside:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(
 	flex-direction: column;
 	justify-content: center;
 }
-section > article > aside:nth-of-type(1) > div:nth-of-type(1) > div > div{
+aside > article > aside:nth-of-type(1) > div:nth-of-type(1) > div > div{
 	display: flex;
 	align-items: center;
 }
-section > article > aside:nth-of-type(1) > div:nth-of-type(1) > div > div > span:nth-of-type(1){
+aside > article > aside:nth-of-type(1) > div:nth-of-type(1) > div > div > span:nth-of-type(1){
 	color: #af0000;
 	font-size: 18px;
 	height: 18px;
 	line-height: 18px;
 }
-section > article > aside:nth-of-type(1) > div:nth-of-type(1) > div > div > span:nth-of-type(1) > a:hover{
+aside > article > aside:nth-of-type(1) > div:nth-of-type(1) > div > div > span:nth-of-type(1) > a:hover{
 	text-decoration: underline;	
 }
-section > article.type2{
+aside > article.type2{
 	border-left: #ffb400 12px solid;
 }
-section > article.type2 > aside:nth-of-type(1) > div:nth-of-type(1) > div > div > span:nth-of-type(1){
+aside > article.type2 > aside:nth-of-type(1) > div:nth-of-type(1) > div > div > span:nth-of-type(1){
 	color: #ffb400;
 }
-section > article.type3{
+aside > article.type3{
 	border-left: #ef3a3a 12px solid;
 }
-section > article.type3 > aside:nth-of-type(1) > div:nth-of-type(1) > div > div > span:nth-of-type(1){
+aside > article.type3 > aside:nth-of-type(1) > div:nth-of-type(1) > div > div > span:nth-of-type(1){
 	color: #ef3a3a;
 }
-section > article.type4{
+aside > article.type4{
 	border-left: #820233 12px solid;
 }
-section > article.type4 > aside:nth-of-type(1) > div:nth-of-type(1) > div > div > span:nth-of-type(1){
+aside > article.type4 > aside:nth-of-type(1) > div:nth-of-type(1) > div > div > span:nth-of-type(1){
 	color: #820233;
 }
-section > article > aside:nth-of-type(1) > div:nth-of-type(1) > div > div > span:nth-of-type(2){
+aside > article > aside:nth-of-type(1) > div:nth-of-type(1) > div > div > span:nth-of-type(2){
 	color: #888888;
 	font-size: 14px;
 	height: 14px;
 	line-height: 14px;
 	margin-left: 3px;
 }
-section > article > aside:nth-of-type(1) > div:nth-of-type(1) > div > span{
+aside > article > aside:nth-of-type(1) > div:nth-of-type(1) > div > span{
 	display: block;
 	color: #888888;
 	font-size: 12px;
 	height: 15px;
 	line-height: 15px;
 }
-section > article > aside:nth-of-type(1) > div:nth-of-type(2){
+aside > article > aside:nth-of-type(1) > div:nth-of-type(2){
 	flex: 1.6;
 	transition: all 0.4s;
 }
-section > article > aside:nth-of-type(1) > div:nth-of-type(2).full{
+aside > article > aside:nth-of-type(1) > div:nth-of-type(2).full{
 	transform: translateX(calc(25% - 20px));
 }
-section > article > aside:nth-of-type(1) > div:nth-of-type(2) > *{
+aside > article > aside:nth-of-type(1) > div:nth-of-type(2) > *{
 	width: calc(100% - 2vw);
 	margin: 0px 0px 10px 1vw;
 }
-section > article > aside:nth-of-type(1) > div:nth-of-type(2) > p{
+aside > article > aside:nth-of-type(1) > div:nth-of-type(2) > p{
 	text-align: justify;
 }	
-section > article > aside:nth-of-type(2){
+aside > article > aside:nth-of-type(2){
 	display: flex;
 	flex-direction: row;
 	align-items: stretch;
@@ -114,7 +114,7 @@ section > article > aside:nth-of-type(2){
 	overflow: hidden;
 	transition: all 0.4s;
 }
-section > article > aside:nth-of-type(2).close{
+aside > article > aside:nth-of-type(2).close{
 	transform: translateX(calc(100% - 40px));
 }
 #stats-publication {
@@ -150,7 +150,7 @@ section > article > aside:nth-of-type(2).close{
 }
 .star{
 	display: inline-block;
-	background-image: url('/ressources/images/icons2.svg');
+	background-image: url('../ressources/images/icons2.svg');
 	background-size: 30px auto;
 	background-position: -2px -840px;
 	background-repeat: no-repeat;
@@ -183,7 +183,7 @@ div[class^='starr'] {
 	vertical-align: top;
 	height: 35px;
 	width: 30px;
-	background-image: url('/ressources/images/icons2.svg');
+	background-image: url('../ressources/images/icons2.svg');
 	background-size: 40px auto;
 	background-position: -6px -1200px;
 	background-repeat: no-repeat;
@@ -202,7 +202,7 @@ div[class^='starr'] {
 	vertical-align: top;
 	height: 30px;
 	width: 30px;
-	background-image: url('/ressources/images/icons2.svg');
+	background-image: url('../ressources/images/icons2.svg');
 	background-size: 40px auto;
 	background-position: -6px -1280px;
 	background-repeat: no-repeat;
@@ -280,7 +280,7 @@ div[class^='starr'] {
 	border: 0px solid #ffffff;
 	width: 30px;
 	height: 30px;
-	background-image: url('/ressources/images/icons2.svg');
+	background-image: url('../ressources/images/icons2.svg');
 	background-size: 25px auto;
 	background-origin: content-box;
 	padding: 2px 0px 0px 6px;
@@ -374,7 +374,7 @@ article.loader > div{
 	top: 0px;
 	left: 0px;
 	background-color: rgba(150,150,150,0.5);
-	background-image: url("/ressources/images/loader.gif");
+	background-image: url("../ressources/images/loader.gif");
 	background-repeat: no-repeat;
 	background-size: 50px;
 	background-position: center center;
@@ -514,7 +514,7 @@ article.loader > div{
 	display: inline-block;
 	background-size: cover;
 	background-position: center center;
-	background-image: url('/ressources/images/icons2.svg');
+	background-image: url('../ressources/images/icons2.svg');
 	background-size: 140px auto;
 	background-position: 0px -3500px;
 	background-repeat: no-repeat;
@@ -537,7 +537,7 @@ article.loader > div{
 #form_publication > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div > div{
 	width: 35px;
 	height: 35px;
-	background-image: url('/ressources/images/icons2.svg');
+	background-image: url('../ressources/images/icons2.svg');
 	background-size: 35px auto;
 	background-repeat: no-repeat;
 	cursor: pointer;
@@ -575,7 +575,7 @@ article.loader > div{
 #form_publication .option > .services{
 	display: flex;
 	flex-direction: row;
-	background-image: url("/ressources/images/icons3.svg");
+	background-image: url("../ressources/images/icons3.svg");
 	background-size: 100px auto;
 	background-repeat: no-repeat;
 	background-position: center 30px;
@@ -624,7 +624,6 @@ article.loader > div{
 	background-color: #fff;
 	padding-left: 4px;
 	flex: 1;
-	color: 
 }
 #form_publication .option fieldset > div{
 	display: flex;

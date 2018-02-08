@@ -28,39 +28,6 @@
             <div id="search">
                 <input type="search" placeholder="Recherchez par personnes...."/>
                 <div>
-                    <!--<article class="membercard" size="1" >
-                    <div class="moy-profil" style="background-image: url('/publicfiles/1/profil_8cc5a21f8012980c82cd9fcf3ea4e53016cf11a186cf9cbd5019c0efecb63600170718154836.png');"></div>
-                    <div>
-                        <div>
-                            <h3>Pierre Dupont</h3>
-                            <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id elit nec velit porta laoreet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id elit nec velit porta laoreet. </q>
-                        </div>
-                        <div>
-                            <div class="geopoint">
-                                <icon size="30l" ic="geopoint-grey"></icon>
-                                Paris, France
-                            </div>
-                            <div class="valuation">
-                                <icon size="30l" ic="valuation-yellow"></icon>
-                                4.7 pour 58 votes
-                            </div>
-                            <div class="pointscounter">
-                                <icon size="30l" ic="points-classic"></icon>
-                                37895 pts
-                            </div>
-                        </div>
-                        <div>
-                            <button class="followmember" >
-                                <icon size="30l" ic="follow-red"></icon>
-                                S'abonner
-                            </button>
-                            <button class="followedmember" >
-                                <icon size="30l" ic="followed-white"> </icon>
-                                Abonné
-                            </button>
-                        </div>
-                    </div>
-                </article>-->
                 </div>
             </div>
             <div id="dashboard" class="lay-1-1" >
@@ -73,86 +40,6 @@
                                 <span datetime="2017-11-04 18:41:11"> - Il y a 18 jours</span>
                             </div>
                             <div>a publié du contenu</div>
-                        </div>
-                    </div>
-                    <div class="lay-1-2-B notification" >
-                        <div class="mini-profil" style="background-image: url('/publicfiles/1/profil_8cc5a21f8012980c82cd9fcf3ea4e53016cf11a186cf9cbd5019c0efecb63600170718154836.png');"></div>
-                        <div>
-                            <div>
-                                <span><a href="/membre/pierre.dupont">pierre.dupont</a></span>
-                                <span datetime="2017-11-04 18:41:11"> - Il y a 18 jours</span>
-                            </div>
-                            <div>a commenté votre publication</div>
-                        </div>
-                    </div>
-                    <div class="lay-1-2-B notification" >
-                        <div class="mini-profil" style="background-image: url('/publicfiles/1/profil_8cc5a21f8012980c82cd9fcf3ea4e53016cf11a186cf9cbd5019c0efecb63600170718154836.png');"></div>
-                        <div>
-                            <div>
-                                <span><a href="/membre/pierre.dupont">pierre.dupont</a></span>
-                                <span datetime="2017-11-04 18:41:11"> - Il y a 18 jours</span>
-                            </div>
-                            <div>s'est abonné en retour</div>
-                        </div>
-                    </div>
-                    <div class="lay-1-2-B notification" >
-                        <div class="mini-profil" style="background-image: url('/publicfiles/1/profil_8cc5a21f8012980c82cd9fcf3ea4e53016cf11a186cf9cbd5019c0efecb63600170718154836.png');"></div>
-                        <div>
-                            <div>
-                                <span><a href="/membre/pierre.dupont">pierre.dupont</a></span>
-                                <span datetime="2017-11-04 18:41:11"> - Il y a 18 jours</span>
-                            </div>
-                            <div>a publié du contenu</div>
-                        </div>
-                    </div>
-                    <div class="lay-1-2-B notification" >
-                        <div class="mini-profil" style="background-image: url('/publicfiles/1/profil_8cc5a21f8012980c82cd9fcf3ea4e53016cf11a186cf9cbd5019c0efecb63600170718154836.png');"></div>
-                        <div>
-                            <div>
-                                <span><a href="/membre/pierre.dupont">pierre.dupont</a></span>
-                                <span datetime="2017-11-04 18:41:11"> - Il y a 18 jours</span>
-                            </div>
-                            <div>a publié du contenu</div>
-                        </div>
-                    </div>
-                    <div class="lay-1-2-B notification" >
-                        <div class="mini-profil" style="background-image: url('/publicfiles/1/profil_8cc5a21f8012980c82cd9fcf3ea4e53016cf11a186cf9cbd5019c0efecb63600170718154836.png');"></div>
-                        <div>
-                            <div>
-                                <span><a href="/membre/pierre.dupont">pierre.dupont</a></span>
-                                <span datetime="2017-11-04 18:41:11"> - Il y a 18 jours</span>
-                            </div>
-                            <div>a commenté votre publication</div>
-                        </div>
-                    </div>
-                    <div class="lay-1-2-B notification" >
-                        <div class="mini-profil" style="background-image: url('/publicfiles/1/profil_8cc5a21f8012980c82cd9fcf3ea4e53016cf11a186cf9cbd5019c0efecb63600170718154836.png');"></div>
-                        <div>
-                            <div>
-                                <span><a href="/membre/pierre.dupont">pierre.dupont</a></span>
-                                <span datetime="2017-11-04 18:41:11"> - Il y a 18 jours</span>
-                            </div>
-                            <div>s'est abonné en retour</div>
-                        </div>
-                    </div>
-                    <div class="lay-1-2-B notification" >
-                        <div class="mini-profil" style="background-image: url('/publicfiles/1/profil_8cc5a21f8012980c82cd9fcf3ea4e53016cf11a186cf9cbd5019c0efecb63600170718154836.png');"></div>
-                        <div>
-                            <div>
-                                <span><a href="/membre/pierre.dupont">pierre.dupont</a></span>
-                                <span datetime="2017-11-04 18:41:11"> - Il y a 18 jours</span>
-                            </div>
-                            <div>a publié du contenu</div>
-                        </div>
-                    </div>
-                    <div class="lay-1-2-B notification" >
-                        <div class="mini-profil" style="background-image: url('/publicfiles/1/profil_8cc5a21f8012980c82cd9fcf3ea4e53016cf11a186cf9cbd5019c0efecb63600170718154836.png');"></div>
-                        <div>
-                            <div>
-                                <span><a href="/membre/pierre.dupont">pierre.dupont</a></span>
-                                <span datetime="2017-11-04 18:41:11"> - Il y a 18 jours</span>
-                            </div>
-                            <div>s'est abonné en retour</div>
                         </div>
                     </div>
                 </div>
@@ -173,8 +60,8 @@
             <div id="btn-user">
                 <div>
                     <div class="menu-item"><icon size="40" ic="user-white" /></div>
-                    <div class="menu-item"><icon size="40" ic="user-follow" /></div>
-                    <div class="menu-item"><icon size="40" ic="user-follower" /></div>
+                    <div class="menu-item"><icon size="40" ic="following-white" /></div>
+                    <div class="menu-item"><icon size="40" ic="follower-white" /></div>
                     <div class="menu-toggle"><icon size="50" ic="user-white" /></div>
                 </div>
             </div>
@@ -207,90 +94,6 @@
                     <li>
                     </li>
                 </nav>
-                <article class="membercard" size="1" >
-                    <div class="moy-profil" style="background-image: url('/publicfiles/1/profil_8cc5a21f8012980c82cd9fcf3ea4e53016cf11a186cf9cbd5019c0efecb63600170718154836.png');"></div>
-                    <div>
-                        <div>
-                            <h3>Pierre Dupont</h3>
-                            <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id elit nec velit porta laoreet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id elit nec velit porta laoreet. </q>
-                        </div>
-                        <div>
-                            <div class="geopoint">
-                                <icon size="30l" ic="geopoint-grey"></icon>
-                                Paris, France
-                            </div>
-                            <div class="valuation">
-                                <icon size="30l" ic="valuation-yellow"></icon>
-                                4.7 pour 58 votes
-                            </div>
-                            <div class="pointscounter">
-                                <icon size="30l" ic="points-classic"></icon>
-                                37895 pts
-                            </div>
-                        </div>
-                        <div>
-                            <button class="followmember" >
-                                <icon size="30l" ic="favori-white"></icon>
-                            </button>
-                        </div>
-                    </div>
-                </article>
-                <article class="membercard" size="2" >
-                    <div class="moy-profil" style="background-image: url('/publicfiles/1/profil_8cc5a21f8012980c82cd9fcf3ea4e53016cf11a186cf9cbd5019c0efecb63600170718154836.png');"></div>
-                    <div>
-                        <div>
-                            <h3>Pierre Dupont</h3>
-                            <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id elit nec velit porta laoreet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id elit nec velit porta laoreet. </q>
-                        </div>
-                        <div>
-                            <div class="geopoint">
-                                <icon size="30l" ic="geopoint-grey"></icon>
-                                Paris, France
-                            </div>
-                            <div class="valuation">
-                                <icon size="30l" ic="valuation-yellow"></icon>
-                                4.7 pour 58 votes
-                            </div>
-                            <div class="pointscounter">
-                                <icon size="30l" ic="points-classic"></icon>
-                                37895 pts
-                            </div>
-                        </div>
-                        <div>
-                            <button class="followmember" >
-                                <icon size="30l" ic="favori-white"></icon>
-                            </button>
-                        </div>
-                    </div>
-                </article>
-                <article class="membercard" size="3" >
-                    <div class="moy-profil" style="background-image: url('/publicfiles/1/profil_8cc5a21f8012980c82cd9fcf3ea4e53016cf11a186cf9cbd5019c0efecb63600170718154836.png');"></div>
-                    <div>
-                        <div>
-                            <h3>Pierre Dupont</h3>
-                            <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id elit nec velit porta laoreet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id elit nec velit porta laoreet. </q>
-                        </div>
-                        <div>
-                            <div class="geopoint">
-                                <icon size="30l" ic="geopoint-grey"></icon>
-                                Paris, France
-                            </div>
-                            <div class="valuation">
-                                <icon size="30l" ic="valuation-yellow"></icon>
-                                4.7 pour 58 votes
-                            </div>
-                            <div class="pointscounter">
-                                <icon size="30l" ic="points-classic"></icon>
-                                37895 pts
-                            </div>
-                        </div>
-                        <div>
-                            <button class="followmember" >
-                                <icon size="30l" ic="favori-white"></icon>
-                            </button>
-                        </div>
-                    </div>
-                </article>
             </aside>
         </section>-->
         <!--
@@ -300,32 +103,6 @@
                 <icon size="40r" ic="cross-grey" />
             </aside>
             <aside>
-                <article>
-                    <div class="geopoint">
-                        <icon size="30l" ic="geopoint-grey"></icon>
-                        Paris, France
-                    </div>
-                    <div class="valuation">
-                        <icon size="30l" ic="valuation-yellow"></icon>
-                        4.7 pour 58 votes
-                    </div>
-                    <div class="pointscounter">
-                        <icon size="30l" ic="points-classic"></icon>
-                        37895 pts
-                    </div>
-                    <button class="followmember" >
-                        <icon size="30l" ic="follow-white"></icon>
-                    </button>
-                    <button class="followmember" >
-                        <icon size="30l" ic="followed-white"></icon>
-                    </button>
-                    <button class="followmember" >
-                        <icon size="30l" ic="favori-white"></icon>
-                    </button>
-                    <button class="airmess-contact" >
-                        <icon size="30l" ic="airmess-white"></icon>
-                    </button>
-                <article>
             </aside>
         </section>-->
 

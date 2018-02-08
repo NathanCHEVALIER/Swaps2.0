@@ -698,14 +698,12 @@ section#fil-rouge > aside:nth-of-type(2)[schema='1'] > article.publication{
 /******
 Cartes membres, abonnements...
 ******/
-#followed{
-}
-#followed > aside:nth-of-type(2){
+#abonnements > aside:nth-of-type(2){
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-#followed > aside:nth-of-type(2) > nav{
+#abonnements > aside:nth-of-type(2) > nav{
     flex: 1;
     position: relative;
     display: flex;
@@ -717,16 +715,16 @@ Cartes membres, abonnements...
 	box-shadow: 0px 1px 3px #bbbbbb;
 	border-radius: 1px;
 }
-#followed > aside:nth-of-type(2) > nav > li{
+#abonnements > aside:nth-of-type(2) > nav > li{
     position: relative;
     margin: 0px;
     flex: 1;
     list-style: none;
 }
-#followed > aside:nth-of-type(2) > nav > li.selected{
+#abonnements > aside:nth-of-type(2) > nav > li.selected{
     border-bottom: 3px solid #af0000;
 }
-#followed > aside:nth-of-type(2) > nav > li:nth-of-type(4){
+#abonnements > aside:nth-of-type(2) > nav > li:nth-of-type(4){
     flex: 4;
 }
 article.membercard{
@@ -959,7 +957,7 @@ Buttons, infos blocs, pictures...
     font-size: 15px;
     cursor: pointer;
 }
-.followmember{
+.btn-abo{
     position: relative;
     width: 120px;
     min-height: 30px;
@@ -973,9 +971,6 @@ Buttons, infos blocs, pictures...
     padding-left: 25px;
     line-height: 22px;
     font-size: 16px;
-}
-.followmember::after{
-    content: "S'abonner";
 }
 .airmess-contact{
     position: relative;

@@ -30,6 +30,14 @@ $(function () {
 		$("#box").removeClass("open");
 	})
 
+	$("#btn-user .menu-item > icon[ic='user-white']").click( function(){
+		$("body").Navigate("membre", Session.pseudo);
+	});
+
+	$("#btn-user .menu-item > icon[ic='following-white']").click( function(){
+		$("body").Navigate("abonnements", false);
+	});
+
 	/******
 	 * Navigation
 	 */

@@ -1,18 +1,16 @@
 (function($) {
 
-    $.fn.ClickOnLink = function(){
+    $.fn.Navigate = function(page, param){
         this.each(function(){
-            var cible = $(this).attr('href');
-            var page = cible.toString().split("/");
             var pageexist = false;
             $("section").each(function(){
-                if( $(this).attr("id") == page[1] && $(this).attr("params") == page[2] ){
+                if( $(this).attr("id") == page && $(this).attr("params") == param ){
                     $("body").DecalWin($(this));
                     pageexist = true;
                 }
             });
             if(pageexist == false){
-                $("body").CreateWin(page[1], page[2]);
+                $("body").CreateWin(page, param);
             }
         });
         return this;
@@ -38,8 +36,9 @@
         this.each(function(){
             if($("section").length <= 10){
                 numberofWin = $("section").length + 1;
-                $newWin = $("<section flap='" + numberofWin + "' id='" + page + "' params='" + param + "' ></section>");
+                $newWin = $("<section class='active open' flap='" + numberofWin + "' id='" + page + "' params='" + param + "' ></section>");
                 $("nav").after($newWin);
+                $newWin.removeClass("open");
                 $("body").DecalWin($newWin);
                 $newWin.LoadPage(page, param);
                 $newWin = false;
@@ -64,7 +63,8 @@
                 $(this).children("aside:eq(1)").PageMembre(params);
             }
             else if(page == "abonnements"){
-                $("section").PageAbonnements();
+                title = "Abonnements";
+                $(this).children("aside:eq(1)").PageAbonnements();
             }
             else if(page == "services"){
                 $("section").PageServices();
@@ -83,7 +83,7 @@
 
             $(this).find("aside:eq(0)").not("icon[ic='cross-grey']").click(function(){
                 $("body").DecalWin($(this).parent());
-                $(this).parent().addClass("open").addClass("active");
+                $(this).parent().addClass("active").toggleClass("open");
                 $("#btn-menu").toggleClass("menu-open");
                 $("#dashboard").toggleClass("hide");
             });
@@ -155,7 +155,7 @@
                 },
                 function(data, success){
                     for (var i = 0; i < data.length; i++) {
-                        $(thisObject).Abos(data[i]);
+                        $(thisObject).MemberCard(data[i]);
                     }
                     history.pushState({ path: this.path }, '', '/abonnements');
                     $("#loader").removeClass("complet");

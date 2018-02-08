@@ -136,6 +136,9 @@ icon[size^='30'][ic='followed-red']{
 icon[size^='30'][ic='followed-white']{
 	background-position: -4px -1650px;
 }
+icon[size^='30'][ic='follow-white']{
+	background-position: -4px -1590px;
+}
 icon[size^='30'][ic='favori-white']{
 	background-position: -4px -840px;
 }
@@ -164,10 +167,10 @@ icon[size^='40'][ic='cross-grey']{
 icon[size^='40'][ic='user-white']{
 	background-position: 1px -1361px;
 }
-icon[size^='40'][ic='user-follow']{
+icon[size^='40'][ic='following-white']{
 	background-position: 1px -1523px;
 }
-icon[size^='40'][ic='user-follower']{
+icon[size^='40'][ic='follower-white']{
 	background-position: 1px -1443px;
 }
 icon[size^='40'][ic='timeline-red']{

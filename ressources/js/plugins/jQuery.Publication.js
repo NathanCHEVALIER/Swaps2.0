@@ -73,23 +73,10 @@
                     <div>\
                         <div>\
                             <div>\
-                                <div class="lay-1-2-B" >\
-                                    <div class="mini-profil" style="background-image: url(\'/publicfiles/1/profil_8cc5a21f8012980c82cd9fcf3ea4e53016cf11a186cf9cbd5019c0efecb63600170718154836.png\');">\
-                                    </div>\
-                                    <div>\
-                                        <div>\
-                                            <span><a href="/membre/pierre.dupont">pierre.dupont</a></span>\
-                                            <span datetime="2017-11-04 18:41:11"> - Il y a 18 jours</span>\
-                                        </div>\
-                                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat</div>\
-                                    </div>\
-                                </div>\
-                                </div>\
                             </div>\
                             <div>\
                                 <icon size="30r" ic="cross-grey" />\
                             </div>\
-                            <span></span>\
                         </div>\
                         <form method="post" action="">\
                             <div>\
@@ -196,8 +183,8 @@
             });
 
             function sendcomment(id, comment) {
-                $('article#publication_' + publication['id_publication'] + ' .comm-publication form').addClass('loader');
-                $('article#publication_' + publication['id_publication'] + ' .comm-publication form textarea').val('');
+                $('#publication_' + publication['id_publication'] + ' form').addClass('loader');
+                $('#publication_' + publication['id_publication'] + ' form textarea').val('');
                 $.post("/controllers/controller.php",
                     {
                         action: 111,
@@ -207,7 +194,7 @@
                     function (data){
                         if(data['retour'] == true){
                             statistiques(data['id'], data['stats']);
-                            $('article#publication_' + publication['id_publication'] + ' .comm-publication form').removeClass('loader');
+                            $('#publication_' + publication['id_publication'] + ' form').removeClass('loader');
                         }
                         else{
                             alert('Une erreur est survenue');
@@ -225,8 +212,8 @@
                 $(this).parents(".publication").removeClass("reverse");
             });
 
-            $('article#publication_' + publication['id_publication'] + ' .comm-publication form input[type="submit"]').click( function(){
-                sendcomment($(this).parents("article").attr('id').substring(12), $('article#publication_' + publication['id_publication'] + ' .comm-publication form textarea').val() );
+            $('#publication_' + publication['id_publication'] + ' aside:eq(1) form input[type="submit"]').click( function(){
+                sendcomment($(this).parents("article").attr('id').substring(12), $('#publication_' + publication['id_publication'] + ' form textarea').val() );
                 return false;
             });
 
@@ -238,21 +225,23 @@
                     },
                     function (data){
                         if(data.length == 0 ){
-                            $('article#publication_' + publication['id_publication'] + ' .comm-publication > span').append("Aucun commentaire");
+                            $('#publication_' + publication['id_publication'] + ' aside:eq(1) > div > div > div:eq(0)').append("Aucun commentaire");
                         }
                         else{
                             for (var i = 0; i < data.length; i++) {
-                                $comment = $('<div class="user-basic-align" >\
-                                        <div class="mini-profil" style="background-image: url(\'/publicfiles/' + data[i]['id_auteur'] + '/profil_' + data[i]['profil_auteur'] + '\');" ></div>\
+                                $comment = $('\
+                                    <div class="lay-1-2-B" >\
+                                    <div class="mini-profil" style="background-image: url(\'/publicfiles/' + data[i]['id_auteur'] + '/profil_' + data[i]['profil_auteur'] + '\');">\
+                                    </div>\
+                                    <div>\
                                         <div>\
-                                            <div>\
-                                                <h4>' + data[i]['pseudo_auteur'] + '</h4>\
-                                                <h5>- 8 minutes</h5>\
-                                            </div>\
-                                            <div>' + data[i]['contenu_comm'] + '</div>\
+                                            <span><a href="/membre/' + data[i]['pseudo_auteur'] + '">' + data[i]['pseudo_auteur'] + '</a></span>\
+                                            <span datetime="2017-11-04 18:41:11"> - Il y a 18 jours</span>\
                                         </div>\
-                                    </div >');
-                                $('article#publication_' + publication['id_publication'] + ' .comm-publication > div > div').append($comment);
+                                        <div>' + data[i]['contenu_comm'] + '</div>\
+                                    </div>\
+                                </div>');
+                                $('#publication_' + publication['id_publication'] + ' aside:eq(1) > div > div > div:eq(0)').append($comment);
                             }
                         }
                     },
@@ -260,7 +249,7 @@
                 );
             }
 
-            //loadcomment(publication['id_publication']);
+            loadcomment(publication['id_publication']);
 
             function sendrelay(idpub, texte) {
                 $.post("/controllers/publication.controller.php",
@@ -303,7 +292,9 @@
             });
 
             $('article#publication_' + publication['id_publication'] + ' aside:eq(0) > div:eq(0) > div:eq(1) > div > span > a').click( function(){
-                $(this).ClickOnLink();
+                var cible = $(this).attr('href');
+                var page = cible.toString().split("/");
+                $(this).Navigate(page[1], page[2]);
                 return false;
             });
 

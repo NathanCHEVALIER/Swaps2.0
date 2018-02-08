@@ -6,13 +6,10 @@
             var thisObject = this;
                 
             $content = $('\
-                    <article style="background-image: url(\'/publicfiles/' + membre['id'] + '/couv_' + membre['couv'] + '\');" >\
+                    <article id="membre_' + membre['id'] + '" style="background-image: url(\'/publicfiles/' + membre['id'] + '/couv_' + membre['couv'] + '\');" >\
                         <div class="big-profil" style="background-image: url(\'/publicfiles/' + membre['id'] + '/profil_' + membre['profil'] + '\');"></div>\
                         <div>\
                             <h3>' + membre['pseudo'] + '</h3>\
-                            <button class="followmember" >\
-                                <icon size="30l" ic="follow-white"></icon>\
-                            </button>\
                         </div>\
                         <div class="lay-1-1">\
                             <div class="selected" >\
@@ -66,7 +63,7 @@
             $(thisObject).append($content);
 
             if(membre['id'] != Session.id){
-                $("#entete_membre > div:eq(1) > div").Abonnement(membre['id']);
+                $("#membre_" + membre['id'] + " > div:eq(1)").Abonnement(membre['id']);
             }
 
             load_publications_membre(membre['id']);
@@ -96,5 +93,44 @@
         });
         return this;
     };
+
+    $.fn.MemberCard = function(data){
+        this.each(function(){
+
+            $content = $('\
+            <article class="membercard" id="membercard_' + data['id'] + '" size="1" >\
+                <div class="moy-profil" style="background-image:  url(\'/publicfiles/' + data['id'] + '/profil_' + data['profil'] + '\');"></div>\
+                <div>\
+                    <div>\
+                        <h3>' + data['pseudo'] + '</h3>\
+                        <q>' + data['description'] + '</q>\
+                    </div>\
+                    <div>\
+                        <div class="geopoint">\
+                            <icon size="30l" ic="geopoint-grey"></icon>\
+                            Paris, France\
+                        </div>\
+                        <div class="valuation">\
+                            <icon size="30l" ic="valuation-yellow"></icon>\
+                            4.7 pour 58 votes\
+                        </div>\
+                        <div class="pointscounter">\
+                            <icon size="30l" ic="points-classic"></icon>\
+                            37895 pts\
+                        </div>\
+                    </div>\
+                    <div>\
+                    </div>\
+                </div>\
+            </article>');
+
+            $(this).append($content);
+
+            $("#membercard_" + data['id'] + " > div:eq(1) > div:eq(2)").Abonnement(data['id']);
+
+
+        });
+        return this;
+    }
 
 })(jQuery);

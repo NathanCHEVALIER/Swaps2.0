@@ -3,11 +3,12 @@
     $.fn.publicationHydrator = function(publication){
         this.each(function(){
 
+            var image_publication = "";
             if(publication['image_publication'] != null){
-                var image_publication = '<img src="/publicfiles/1/' + publication['image_publication'] + '" />';
-            }
-            else{
-                var image_publication = "";
+                var images = publication['image_publication'].split(",");
+                for(var i = 1; i < images.length; i++){
+                    image_publication = image_publication + '<img src="/publicfiles/' + publication['id_auteur'] + '/img_' + images[i] + '" />';
+                }
             }
 
             if(publication['type_publication'] == 3){
@@ -195,9 +196,10 @@
                         if(data['retour'] == true){
                             statistiques(data['id'], data['stats']);
                             $('#publication_' + publication['id_publication'] + ' form').removeClass('loader');
+                            $("body").AlertNotification("success", "Votre commentaire a été publiée avec succès!");
                         }
                         else{
-                            alert('Une erreur est survenue');
+                            $("body").AlertNotification("error", "Une erreur est survenue!");
                         }
                     },
                     "json"
@@ -292,9 +294,7 @@
             });
 
             $('article#publication_' + publication['id_publication'] + ' aside:eq(0) > div:eq(0) > div:eq(1) > div > span > a').click( function(){
-                var cible = $(this).attr('href');
-                var page = cible.toString().split("/");
-                $(this).Navigate(page[1], page[2]);
+                $(this).Navigate("membre", publication['pseudo_auteur']);
                 return false;
             });
 
@@ -305,14 +305,14 @@
     $.fn.publicationEditor = function(){
         this.each(function(){
             var $formulaire = $('\
-                <article >\
+            <article >\
                     <aside>\
                         <form id="form_publication" method="post" action="/controllers/controller.php" enctype="multipart/form-data">\
-                            <div>\
+                            <div class="lay-1-2-A" >\
                                 <div class="mini-profil" style="background-image: url(\'/publicfiles/' + Session.id + '/profil_' + Session.profil + '\');" ></div>\
                                 <div>\
                                     <div>\
-                                        <span>' + Session.pseudo + '</span>\
+                                        <span><a href="/membre/' + Session.pseudo + '">' + Session.pseudo + '</a></span>\
                                         <span>►\
                                             <select name="public" >\
                                                 <option value="1" >Abonnés</option>\
@@ -331,69 +331,11 @@
                                         <input type="hidden" name="option" value="1" />\
                                         <div class="image">\
                                         </div>\
-                                        <div class="services">\
-                                            <fieldset>\
-                                                <legend>Je propose:</legend>\
-                                                <input type="text" name="service_titre" placeholder="Ex: Bricolage, cours de piano, prêt d\' une pelle... " />\
-                                                <div>\
-                                                    <input type="checkbox" name="service_multiple" id="plusieursfois" />\
-                                                    <label for="plusieursfois">Valable plusieurs fois</label>\
-                                                </div>\
-                                            </fieldset>\
-                                            <fieldset>\
-                                                <legend>Contrepartie:</legend>\
-                                                <select name="service_contrepartie" >\
-                                                    <option value="1" >Autre service</option>\
-                                                    <option value="2" selected >Points Swaps</option>\
-                                                    <option value="3" >Liquide (lors du service)</option>\
-                                                    <option value="4" >Gratuit</option>\
-                                                </select>\
-                                                <div>\
-                                                    <input type="number" name="service_tps" placeholder="Nbre d\'heures" />\
-                                                </div>\
-                                                <div>\
-                                                    <input type="checkbox" name="service_valid" id="validmanuelle" />\
-                                                    <label for="validmanuelle">Validation manuelle</label>\
-                                                </div>\
-                                            </fieldset>\
-                                        </div>\
-                                        <div class="activites">\
-                                        en dev\
-                                            <!--<fieldset>\
-                                                <input type="text" name="service_titre" placeholder="Ex: Bricolage, cours de piano, prêt d\' une pelle... " />\
-                                                <div>\
-                                                    <input type="checkbox" name="service_multiple" id="plusieursfois" />\
-                                                    <label for="plusieursfois">Valable plusieurs fois</label>\
-                                                </div>\
-                                            </fieldset>\
-                                            <fieldset>\
-                                                <div>\
-                                                    <input type="date" name="service_tps" placeholder="Date: JJ/MM/AAAA HH:MM:SS" />\
-                                                </div>\
-                                                <div>\
-                                                    <input type="checkbox" name="service_valid" id="validmanuelle" />\
-                                                    <label for="validmanuelle">Place limité</label>\
-                                                    <input type="number" name="service_tps" placeholder="Nbre d\'heures" />\
-                                                </div>\
-                                                <div>\
-                                                    <input type="checkbox" name="service_valid" id="validmanuelle" />\
-                                                    <label for="validmanuelle">Validation manuelle</label>\
-                                                </div>\
-                                            </fieldset>-->\
-                                        </div>\
-                                        <div class="avis">\
-                                            <input type="text" name="" placeholder="" />avis\
-                                        </div>\
                                     </div>\
                                     <div >\
                                         <div>\
                                             <div>\
-                                            </div>\
-                                            <div>\
-                                            </div>\
-                                            <div>\
-                                            </div>\
-                                            <div>\
+                                                <icon ic="img-grey" size="40" />\
                                             </div>\
                                         </div>\
                                         <button type="submit" class="button">Publier</button>\
@@ -404,25 +346,12 @@
                     </aside>\
                     <div>\
                     </div>\
-                </article>\
-            ');
+            </article>');
 
             $(this).prepend($formulaire);
             $("#form_publication .option").hide();
-            $("#form_publication .option .services > fieldset > input:eq(0)").SelectCategorie();
-            $("#form_publication .option .services > fieldset > div:eq(0)").SelectDepartement();
-            $("#form_publication .option .activites > fieldset > input:eq(0)").SelectCategorie();
 
             $("#form_publication > div:eq(1) > div:eq(0) > div:eq(1) > div > div:eq(0)").click( function(){
-                $("#form_publication .option > div").hide();
-                $("#form_publication .option").hide();
-                $("#form_publication input[name='option']").val("1");
-                $("#form_publication").parents("article").removeClass();
-            });
-
-            /** Options: Image */
-
-            $("#form_publication > div:eq(1) > div:eq(0) > div:eq(1) > div > div:eq(1)").click( function(){
                 $("#form_publication .option > div").hide();
                 $("#form_publication .option").show();
                 $("#form_publication .option > .image").show();
@@ -432,14 +361,16 @@
 
             function insert_option_img(){
                 var $btn_img = $('<input type="file" name="pic[]" accept="image/*" >');
-                var $option_img = $('<div class="fileUpload" ><div></div></div>');
+                var $option_img = $('<div class="fileUpload" ><icon size="50" ic="add-grey" /></div>');
                 $("#form_publication .option > div.image").append($option_img);
                 $option_img.append($btn_img);
                 $btn_img.change( function (e) {
                     var files = $(this)[0].files;
                     if (files.length > 0) {
                         var file = files[0];
-                        $(this).parents(".fileUpload").children("div").css('background-image', 'url("' + window.URL.createObjectURL(file) + '")');
+                        console.log(files[0]);
+                        console.log(window.URL.createObjectURL(file));
+                        $(this).parents(".fileUpload").css('background-image', 'url("' + window.URL.createObjectURL(file) + '")');
                         if( $(this).parents(".fileUpload").hasClass("added") ){
                         }
                         else{
@@ -452,37 +383,7 @@
 
             insert_option_img();
 
-            /** Options: Service */
-
-            $("#form_publication > div:eq(1) > div:eq(0) > div:eq(1) > div > div:eq(2)").click( function(){
-                $("#form_publication .option > div").hide();
-                $("#form_publication .option").show();
-                $("#form_publication").parents("article").removeClass().addClass("type2");
-                $("#form_publication .option > .services").show();
-                $("#form_publication input[name='option']").val("2");
-            });
-
-            /** Options: Activites */
-
-            $("#form_publication > div:eq(1) > div:eq(0) > div:eq(1) > div > div:eq(3)").click( function(){
-                $("#form_publication .option > div").hide();
-                $("#form_publication .option").show();
-                $("#form_publication .option > .activites").show();
-                $("#form_publication").parents("article").removeClass().addClass("type3");
-                $("#form_publication input[name='option']").val("3");
-            });
-
-            /** Options: Avis */
-
-            $("#form_publication > div:eq(1) > div:eq(0) > div:eq(1) > div > div:eq(4)").click( function(){
-                $("#form_publication .option > div").hide();
-                $("#form_publication .option").show();
-                $("#form_publication .option > .avis").show();
-                $("#form_publication").parents("article").removeClass().addClass("type4");
-                $("#form_publication input[name='option']").val("4");
-            });
-
-            /** Envoie publication */
+            /** Envoi publication */
 
             $('#form_publication button[type="submit"]').click( function (e) {
                 $("#form_publication").parents(2).addClass("loader");
@@ -500,18 +401,19 @@
                     data: data,
                     success: function (reponse) {
                         if(reponse['retour'] === true){
-                            $("#form_publication .option > div").hide();
-                            $("#form_publication .option").hide();
-                            $("#form_publication input[name='option']").val("1");
-                            $("#form_publication textarea").val("");
-                            $("#form_publication").parents("article").removeClass();
-                            //Réinitialiser tout les champs
-                            $("#form_publication").parents(2).removeClass("loader");
-                            $("section article #form_publication").parents("article").publicationHydrator(reponse['infos']['0']);
+                            $("body").AlertNotification("success", "Votre pubication a été publiée avec succès!");
+                            //$("section article #form_publication").parents("article").publicationHydrator(reponse['infos']['0']);
                         }
                         else{
-
+                            $("body").AlertNotification("error", "Votre pubication a été publiée avec succès!");
                         }
+                        $("#form_publication .option > div").hide();
+                        $("#form_publication .option").hide();
+                        $("#form_publication input[name='option']").val("1");
+                        $("#form_publication textarea").val("");
+                        $("#form_publication").parents("article").removeClass();
+                        $("#form-publication input[type='file']").val("");
+                        $("#form_publication").parents(2).removeClass("loader");
                     }
                 });
                 return false;
@@ -522,45 +424,5 @@
         return this;
 
     };
-
-    $.fn.ServiceHydrator = function(data){
-        this.each(function(){
-
-            var contrepartie = "Non renseignée";
-            if(data['contrepartie'] == 1){
-                contrepartie = "Service en retour";
-            }
-            else if(data['contrepartie'] == 2){
-                contrepartie = "Points Swaps";
-            }
-            else if(data['contrepartie'] == 3){
-                contrepartie = "Argent liquide";
-            }
-            else if(data['contrepartie'] == 4){
-                contrepartie = "Service gratuit";
-            }
-            else{
-
-            }
-
-            $content = $('\
-                    <article class="alignement-2 service" >\
-                        <div style="background-image: url(\'/ressources/images/service.png\');">\
-                        </div>\
-                        <div>\
-                            <span>' + data['titre_service'] + '</span>\
-                            <span>' + data['categorie_service'] + ' - ' + data['sous_cat_service'] + '</span>\
-                            <span>' + contrepartie + '</span>\
-                            <span>' + data['pseudo_auteur'] + '</span>\
-                            <a>En savoir plus v</a>\
-                        </div>\
-                    </article>\
-            ');
-
-            $(this).append($content);
-
-        });
-        return this;
-    }
 
 })(jQuery);

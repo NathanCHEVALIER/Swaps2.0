@@ -27,22 +27,11 @@
         <header>
             <div id="search">
                 <input type="search" placeholder="Recherchez par personnes...."/>
-                <div>
-                </div>
+                <!--<div>
+                </div>-->
             </div>
             <div id="dashboard" class="lay-1-1" >
-                <div>
-                    <div class="lay-1-2-B notification" >
-                        <div class="mini-profil" style="background-image: url('/publicfiles/1/profil_8cc5a21f8012980c82cd9fcf3ea4e53016cf11a186cf9cbd5019c0efecb63600170718154836.png');"></div>
-                        <div>
-                            <div>
-                                <span><a href="/membre/pierre.dupont">pierre.dupont</a></span>
-                                <span datetime="2017-11-04 18:41:11"> - Il y a 18 jours</span>
-                            </div>
-                            <div>a publié du contenu</div>
-                        </div>
-                    </div>
-                </div>
+                <div><!--Emplacement notifications--></div>
                 <div>
                     <div class="big-profil" style="background-image: url('/publicfiles/<?php echo $_SESSION['compte']['id']."/profil_".$_SESSION['compte']['profil']; ?>');"></div>
                     <h4><?php echo $_SESSION['compte']['pseudo']; ?></h4>
@@ -74,6 +63,9 @@
                 </div>
             </div>
         </nav>
+
+        <div id="alertsystem" >
+        </div>
 
         <!--<section flap="2" id="followed" params="false">
             <aside>
@@ -128,5 +120,6 @@
         <script type="text/javascript" src="/ressources/js/plugins/jQuery.Abonnement.js"></script>
         <script type="text/javascript" src="/ressources/js/plugins/jQuery.Selects.js"></script>
         <script type="text/javascript" src="/ressources/js/plugins/jQuery.Notification.js"></script>
+        <script type="text/javascript" src="/ressources/js/plugins/jQuery.Activite.js"></script>
     </body>
 </html>

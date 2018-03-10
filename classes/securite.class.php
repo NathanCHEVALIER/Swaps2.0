@@ -339,21 +339,19 @@ class Securite
 
     /**************************************/
 
-    public function verificationupload($file, $path){
+    public function verificationupload($size, $name, $tmp_path, $path){
         $error = false;
         $newname = bin2hex(mcrypt_create_iv(32, MCRYPT_DEV_URANDOM)).date('y').date('m').date('d').date('H').date('i').date('s');
         $extension = array("JPG", "PNG", "png", "jpg", "jpeg");
-        $maxsize = "10000000"; // 10000000 Octets = 10 MO
-        $actualname = $file['tmp_name'];
-        $actualsize = $file['size'];
-        $actualextension = pathinfo($file['name'], PATHINFO_EXTENSION);
-        if(empty($actualname == 0) || empty($actualsize == 0)) {
+        $maxsize = "5000000"; // 5000000 Octets = 5 MO
+        $actualextension = pathinfo($name, PATHINFO_EXTENSION);
+        if(empty($name == 0) || empty($size == 0)) {
             $error = array('erreur' => true, 'message' => "Fichier invalide");
         }
         if(file_exists($path.'/'.$newname.'.'.$actualextension)) {
             $error = array('erreur' => true, 'message' => "Fichier invalide");
         }
-        if ($actualsize < $maxsize) {
+        if ($size < $maxsize) {
             $error = array('erreur' => true, 'message' => "Fichier trop volumineux");
         }
         if (in_array($actualextension, $extension)) {
@@ -390,7 +388,7 @@ class Securite
         }*/
 
         if(!$error || !$erreur) {
-            move_uploaded_file($actualname, __DIR__.'/../'.$path.$newname.'.'.$actualextension);
+            move_uploaded_file($tmp_path, __DIR__.'/../'.$path.$newname.'.'.$actualextension);
             $retour = array("error" => false, "name" => $newname.'.'.$actualextension);
         }
         else {

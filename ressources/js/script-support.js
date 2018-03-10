@@ -151,97 +151,12 @@ $(function () {
 		return false;
 	});
 
-	$("#connect > div:eq(0) > div:eq(0)").click( function(){
-		$("#connect > div:eq(1) > div").removeClass("connexion").toggleClass("inscription");
+	$("#connect > div:eq(1) > div > div > div:eq(2)").click( function(){
+		$("#connect > div:eq(1) > div").addClass("show-connect");
 	});
 
-	$("#connect > div:eq(0) > div:eq(1)").click( function(){
-		$("#connect > div:eq(1) > div").removeClass("inscription").toggleClass("connexion");
-	});
-
-	var slide_sondage = 1;
-
-	$("#form-sondage > aside:eq(1) > .btn:eq(1)").click( function(){
-		if(slide_sondage == 1){
-			$("#form-sondage > aside:eq(0) > .progress-bar > div").css("width", "20%");
-			$("#form-sondage > article > div").css("margin-left", "-100%");
-			slide_sondage = 2;
-		}
-		else if(slide_sondage == 2){
-			$("#form-sondage > aside:eq(0) > .progress-bar > div").css("width", "40%");
-			$("#form-sondage > article > div").css("margin-left", "-200%");
-			slide_sondage = 3;
-		}
-		else if(slide_sondage == 3){
-			$("#form-sondage > aside:eq(0) > .progress-bar > div").css("width", "60%");
-			$("#form-sondage > article > div").css("margin-left", "-300%");
-			slide_sondage = 4;
-		}
-		else if(slide_sondage == 4){
-			$("#form-sondage > aside:eq(0) > .progress-bar > div").css("width", "80%");
-			$("#form-sondage > article > div").css("margin-left", "-400%");
-			slide_sondage = 5;
-		}
-		else if(slide_sondage == 5){
-			$("#form-sondage > aside:eq(0) > .progress-bar > div").css("width", "100%");
-			$("#form-sondage > article > div").css("margin-left", "-500%");
-			$("#form-sondage > aside:eq(1) > .btn:eq(1)").html("Envoyer");
-			slide_sondage = 6;
-		}
-		else if(slide_sondage == 6){
-			var $form = $("#form-sondage");
-                var formdata = (window.FormData) ? new FormData($form[0]) : null;
-                var data = (formdata !== null) ? formdata : $form.serialize();
-            
-                $.ajax({
-                    url: $form.attr('action'),
-                    type: $form.attr('method'),
-                    contentType: false, 
-                    processData: false, 
-                    dataType: 'json', 
-                    data: data,
-                    success: function (reponse) {
-                        if(reponse === true){
-							$("#form-sondage .question:eq(5) p").append("<label class='true' style='width: 60%; margin: 30px 20% 0px 20%;' >Réponses enregistrées</label>");
-						}
-						else{
-							$("#form-sondage .question:eq(5) p").append("<label style='width: 60%; margin: 30px 20% 0px 20%;' >Un erreur est survenue</label>");
-						}
-                    }
-                });
-                return false;
-		}
-		return false;
-	});
-
-	$("#form-sondage > aside:eq(1) > .btn:eq(0)").click( function(){
-		if(slide_sondage == 2){
-			$("#form-sondage > aside:eq(0) > .progress-bar > div").css("width", "1%");
-			$("#form-sondage > article > div").css("margin-left", "-0%");
-			slide_sondage = 1;
-		}
-		else if(slide_sondage == 3){
-			$("#form-sondage > aside:eq(0) > .progress-bar > div").css("width", "20%");
-			$("#form-sondage > article > div").css("margin-left", "-100%");
-			slide_sondage = 2;
-		}
-		else if(slide_sondage == 4){
-			$("#form-sondage > aside:eq(0) > .progress-bar > div").css("width", "40%");
-			$("#form-sondage > article > div").css("margin-left", "-200%");
-			slide_sondage = 3;
-		}
-		else if(slide_sondage == 5){
-			$("#form-sondage > aside:eq(0) > .progress-bar > div").css("width", "60%");
-			$("#form-sondage > article > div").css("margin-left", "-300%");
-			slide_sondage = 4;
-		}
-		else if(slide_sondage == 6){
-			$("#form-sondage > aside:eq(0) > .progress-bar > div").css("width", "80%");
-			$("#form-sondage > article > div").css("margin-left", "-400%");
-			$("#form-sondage > aside:eq(1) > .btn:eq(1)").html("Suivant");
-			slide_sondage = 5;
-		}
-		return false;
+	$("#connect > div:eq(1) > div > div > div:eq(1)").click( function(){
+		$("#connect > div:eq(1) > div").addClass("show-ins");
 	});
 
 });

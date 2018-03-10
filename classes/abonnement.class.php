@@ -74,4 +74,26 @@ class Abonnement
         return $this->update_abonnement = array("retour" => true);
     }
 
+    public function getSubscriptionByMember($id){
+        $req = $GLOBALS['bddL7C13']->prepare("SELECT d.*, c.*
+											FROM clayette c
+											INNER JOIN dactyle d
+											ON c.cocasse = d.dazibao
+											WHERE (c.cnidaire = :id
+											AND c.coenzine = 1)
+											ORDER BY c.collutoire DESC");
+        $req->execute(array('id' => $id));
+        $retour = array();
+
+        while ($donnees = $req->fetch()) {
+            $retour[] = array("id" => $donnees['dazibao'], 
+                            "pseudo" => $donnees['decapode'], 
+                            "type" => $donnees['diatribe'], 
+                            "profil" => $donnees['dessication'],
+                            );
+        }
+       
+        return $this->getSubscriptionByMember = $retour;
+    }
+
 }

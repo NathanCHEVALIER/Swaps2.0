@@ -9,85 +9,13 @@ Dernière modification par Nathan CHEVALIER le 26 Décembre 2016
 class Publication
 {
 
-	public function set_service($titre, $cat, $souscat, $lieu, $multiple, $contre, $tps, $manu){
-		$req = $GLOBALS['bddL7C13']->prepare('INSERT INTO facadisme (factotum, faisandage, falafel, fangotherapie, fastigie, fazenda, feldspathique, fenestron, ferblantier, ferromolybdene, feudataire) VALUES(:auteur, :titre, :cat, :souscat, :lieu, :multiple, :contre, :tps, :manu, NOW(), 1)');
-		$req->execute(array('auteur' => $_SESSION['user']['id'],
-							'titre' => $titre,
-							'cat' => $cat,
-							'souscat' => $souscat,
-							'lieu' => $lieu,
-							'multiple' => $multiple,
-							'contre' => $contre,
-							'tps' => $tps,
-							'manu' => $manu,
-							));
-		$compteur = $req->rowCount();
-
-		if($compteur == 1){
-			$id = $GLOBALS['bddL7C13']->lastInsertId();
-			return $this->set_service = array('retour' => true, 'id' => $id);
-		}
-		else{
-			return $this->set_service = array('retour' => false);
-		}
-	}
-
-	public function get_service($type, $info){
-		if($type == 1 && $info == null){
-			$fil = $GLOBALS['bddL7C13']->prepare('SELECT f.*, d.*
-												FROM facadisme f
-												INNER JOIN dactyle d
-												ON f.factotum = d.dazibao
-												WHERE f.feudataire = 1
-												ORDER BY f.ferromolybdene DESC');
-			$fil->execute();
-		}
-		else{
-
-		}
-		$retour = array();
-		while ($donnees = $fil->fetch()) {
-			$retour[] = array("id_auteur" => $donnees['dazibao'], 
-							"pseudo_auteur" => $donnees['decapode'], 
-							"type_auteur" => $donnees['diatribe'], 
-							"profil_auteur" => $donnees['dessication'],
-							"id_service" => $donnees['facetie'],
-							"titre_service" => $donnees['faisandage'],
-							"categorie_service" => $donnees['falafel'],
-							"sous_cat_service" => $donnees['fangotherapie'],
-							"contrepartie" => $donnees['feldspathique'],
-							"tps" => $donnees['fenestron'],
-							);
-		}
-		return $this->get_service = $retour;
-		
-	}
-	
-	public function set_publication($type, $public, $texte){
-		$ref = null;
-		if($type == 2){
-            $titre = htmlspecialchars($_POST['service_titre']);
-            $cat = htmlspecialchars($_POST['categorie']);
-            $souscat = htmlspecialchars($_POST['sous_categorie']);
-            $lieu = htmlspecialchars($_POST['departement']);
-            $contre = htmlspecialchars($_POST['service_contrepartie']);
-            $temps = htmlspecialchars($_POST['service_tps']);             
-            $service = $this->set_service($titre, $cat, $souscat, $lieu, 1, $contre, $temps, 1);
-			$ref = $service['id'];
-        }
-        elseif($type == 3){
-
-        }
-        else{
-
-        }
-
-		$req = $GLOBALS['bddL7C13']->prepare('INSERT INTO adenoide (alcade, ammonite, ambre, anaerobie, androstone, andoran, angor, anoxie) VALUES(:auteur, :public, NOW(), :texte, null, :ref, :type, 1)');
+	public function set_publication($type, $public, $texte, $image){		
+		$req = $GLOBALS['bddL7C13']->prepare('INSERT INTO adenoide (alcade, ammonite, ambre, anaerobie, androstone, andoran, angor, anoxie) VALUES(:auteur, :public, NOW(), :texte, :img, null, :types, 1)');
 		$req->execute(array('auteur' => $_SESSION['user']['id'],
 							'public' => $public,
 							'texte' => $texte,
-							'ref' => $ref,
-							'type' => $type,
+							'img' => $image,
+							'types' => $type,
 							));
 		$compteur = $req->rowCount();
 

@@ -1,4 +1,16 @@
 /****** All size and layout ******/
+icon[size='20tr']{
+	position: absolute;
+	top: 3px;
+	right: 0px;
+	width: 20px;
+	height: 20px;
+	background-image: url('/ressources/images/icons.svg');
+	background-size: 20px auto;
+	background-origin: 20px 50px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
 icon[size='30']{
 	position: absolute;
 	top: 50%;
@@ -105,6 +117,10 @@ icon[size='50tr']{
 	background-position: 0px -500px;
 	cursor: pointer;
 }
+/****** Al 20 icons ******/
+icon[size^='20'][ic='cross-white']{
+	background-position: -4px -900px;
+}
 /****** Al 30 icons ******/
 icon[size^='30'][ic='comment']{
 	background-position: -4px -900px;
@@ -121,7 +137,7 @@ icon[size^='30'][ic='share']:hover{
 icon[size^='30'][ic='cross-grey']{
 	background-position: -4px -1320px;
 }
-icon[size^='30'][ic='follow-red']{
+icon[size^='30'][ic='follow-grey']{
 	background-position: -4px -1560px;
 }
 icon[size^='30'][ic='follow-white']{
@@ -130,7 +146,7 @@ icon[size^='30'][ic='follow-white']{
 icon[size^='30'][ic='airmess-white']{
 	background-position: -4px -1590px;
 }
-icon[size^='30'][ic='followed-red']{
+icon[size^='30'][ic='followed-grey']{
 	background-position: -4px -1620px;
 }
 icon[size^='30'][ic='followed-white']{
@@ -160,7 +176,20 @@ icon[size^='30'][ic='grille2-grey']{
 icon[size^='30'][ic='grille3-grey']{
 	background-position: 1px -1890px;
 }
+icon[size^='30'][ic='calendar-grey']{
+	background-position: -4px -2040px;
+}
+icon[size^='30'][ic='user-grey']{
+	background-position: -4px -1050px;
+}
+icon[size^='30'][ic='activite-white']{
+	background-position: -4px -420px;
+}
 /****** Al 40 icons ******/
+
+icon[size^='40'][ic='img-grey']{
+	background-position: 1px -80px;
+}
 icon[size^='40'][ic='cross-grey']{
 	background-position: 0px -1760px;
 }
@@ -172,6 +201,12 @@ icon[size^='40'][ic='following-white']{
 }
 icon[size^='40'][ic='follower-white']{
 	background-position: 1px -1443px;
+}
+icon[size^='40'][ic='following-grey']{
+	background-position: 1px -1560px;
+}
+icon[size^='40'][ic='follower-grey']{
+	background-position: 1px -1480px;
 }
 icon[size^='40'][ic='timeline-red']{
 	background-position: 1px -2360px;
@@ -191,6 +226,15 @@ icon[size^='40'][ic='avis-grey']{
 icon[size^='40'][ic='biography-grey']{
 	background-position: 1px -2280px;
 }
+icon[size^='40'][ic='warning-white']{
+	background-position: 1px -2640px;
+}
+icon[size^='40'][ic='error-white']{
+	background-position: 1px -2600px;
+}
+icon[size^='40'][ic='true-white']{
+	background-position: 1px -2680px;
+}
 /****** Al 50 icons ******/
 icon[size^='50'][ic='cross-white']{
 	background-position: 0px -2250px;
@@ -200,4 +244,7 @@ icon[size^='50'][ic='user-white']{
 }
 icon[size^='50'][ic='pen-white']{
 	background-position: 1px -50px;
+}
+icon[size^='50'][ic='add-grey']{
+	background-position: 1px -1200px;
 }

@@ -70,10 +70,11 @@
                 $("section").PageServices();
             }
             else if(page == "activites"){
-                $("section").PageActivites();
+                title = "Activités";
+                $(this).children("aside:eq(1)").attr("schema", 1).PageActivites();
             }
             else if(page == "abonnes"){
-                $("section").PageAbonnes();
+                $(this).children("aside:eq(1)").PageAbonnes();
             }
             else{
                 retour = 2;
@@ -104,7 +105,6 @@
         this.each(function(){
             $("#loader").toggleClass("complet");
             $(this).empty();
-            //$(this).publicationEditor();
             var thisObject = this;
             $.post("/controllers/controller.php",
                 {
@@ -130,7 +130,7 @@
             var thisObject = this;
             $.post("/controllers/controller.php",
                 {
-                    action: 310,
+                    action: 600,
                     pseudo: pseudo,
                 },
                 function(data, success){
@@ -228,12 +228,11 @@
             var thisObject = this;
             $.post("/controllers/controller.php",
                 {
-                    action: 404,
+                    action: 210
                 },
                 function(data, success){
                     for (var i = 0; i < data.length; i++) {
-                        alert('activites indispo');
-                        //$(thisObject).Abos(data[i]);
+                        $(thisObject).ActiviteHydrator(data[i]);
                     }
                     history.pushState({ path: this.path }, '', '/activites');
                     $("#loader").removeClass("complet");

@@ -28,6 +28,7 @@ class Notification
 
     public function notificationsabonne($date)
     {
+		//Ils se sont abonnés à vous
 		$tableau = array();
         $req = $GLOBALS['bddL7C13']->prepare('SELECT d.*, c.*
 									FROM dactyle d
@@ -43,6 +44,7 @@ class Notification
 									"pseudo" => $donnees['decapode'],
 									"profil" => $donnees['dessication'],
 									"date" => $donnees['collutoire'],
+									"supp" => $donnees['clopinette'],
 									"texte" => 1);
 			}
 			elseif($donnees['coenzine'] == 1){
@@ -51,6 +53,7 @@ class Notification
 				                	"pseudo" => $donnees['decapode'],
 				                    "profil" => $donnees['dessication'],
 				                    "date" => $donnees['collutoire'],
+									"supp" => $donnees['clopinette'],
 				                    "texte" => 2);
 			}
 			else{
@@ -67,6 +70,7 @@ class Notification
 
 	public function notificationsabonnement($date)
     {
+		//Ils ont acceptés vos demandes?????
 		$tableau = array();
 		$req = $GLOBALS['bddL7C13']->prepare('SELECT d.*, c.*
 									FROM dactyle d
@@ -82,7 +86,8 @@ class Notification
 				                    "type" => $donnees['diatribe'],
 				                    "pseudo" => $donnees['decapode'],
 				                    "profil" => $donnees['dessication'],
-				                    "date" => $donnees['collutoire'],
+									"date" => $donnees['collutoire'],
+									"supp" => $donnees['clopinette'],
 				                    "texte" => 3,
 				                    );
 			}
@@ -92,6 +97,7 @@ class Notification
 				                    "pseudo" => $donnees['decapode'],
 				                    "profil" => $donnees['dessication'],
 				                    "date" => $donnees['collutoire'],
+									"supp" => $donnees['clopinette'],
 				                    "texte" => 4,
 				                    );
 			}
@@ -109,6 +115,7 @@ class Notification
 
 	public function notificationspublication($date)
     {
+		//Ils ont publiés du contenu
 		$tableau = array();
 		$req = $GLOBALS['bddL7C13']->prepare('SELECT d.*, a.*
 									FROM dactyle d
@@ -123,6 +130,7 @@ class Notification
 				               	"pseudo" => $donnees['decapode'],
 				            	"profil" => $donnees['dessication'],
 				                "date" => $donnees['ambre'],
+								"supp" => $donnees['alezan'],
 				                "texte" => 5,
 				                );
 		}
@@ -155,6 +163,7 @@ class Notification
 				                    "pseudo" => $donnees['decapode'],
 				                    "profil" => $donnees['dessication'],
 				                    "date" => $donnees['brimade'],
+									"supp" => $donnees['baliverne'],
 				                    "texte" => 6,
 				                    );
 			}
@@ -164,6 +173,7 @@ class Notification
 				                    "pseudo" => $donnees['decapode'],
 				                    "profil" => $donnees['dessication'],
 				                    "date" => $donnees['brimade'],
+									"supp" => $donnees['baliverne'],
 				                    "texte" => 7,
 				                    );
 			}
@@ -173,6 +183,7 @@ class Notification
 				                    "pseudo" => $donnees['decapode'],
 				                    "profil" => $donnees['dessication'],
 				                    "date" => $donnees['brimade'],
+									"supp" => $donnees['baliverne'],
 				                    "texte" => 8,
 				                    );
 			}
@@ -202,6 +213,7 @@ class Notification
 											"pseudo" => $donnees['pseudo'],
 											"profil" => $donnees['profil'],
 											"date" => $donnees['date'],
+											"supp" => $donnees['supp'],
 											"texte" => $donnees['texte']);                 
 			}
 		}
@@ -215,6 +227,7 @@ class Notification
 											"pseudo" => $donnees['pseudo'],
 											"profil" => $donnees['profil'],
 											"date" => $donnees['date'],
+											"supp" => $donnees['supp'],
 											"texte" => $donnees['texte']);                 
 			}
 		}
@@ -228,6 +241,7 @@ class Notification
 											"pseudo" => $donnees['pseudo'],
 											"profil" => $donnees['profil'],
 											"date" => $donnees['date'],
+											"supp" => $donnees['supp'],
 											"texte" => $donnees['texte']);                 
 			}
 		}

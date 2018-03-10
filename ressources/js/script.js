@@ -22,12 +22,13 @@ $(function () {
 		$(this).parents("#btn-user").toggleClass("open");
 	});
 
-	$("#btn-edit .menu-item").click(function(){
-		$("#box").addClass("open");
+	$("#btn-edit .menu-item:eq(0)").click(function(){
+		$("#box").addClass("open").children("aside").publicationEditor();
 	});
 
 	$("#box > icon[size='50tr']").click( function(){
 		$("#box").removeClass("open");
+		$("#box > aside").empty();
 	})
 
 	$("#btn-user .menu-item > icon[ic='user-white']").click( function(){
@@ -38,11 +39,14 @@ $(function () {
 		$("body").Navigate("abonnements", false);
 	});
 
-	/******
-	 * Navigation
-	 */
+	$("#btn-edit .menu-item:eq(1)").click(function(){
+		$("#box").addClass("open").children("aside").ActiviteEditor();
+	});
 
 	$("body").CreateWin("fil-rouge", false);
+	$("body").CreateWin("activites", false);
+
+	$("#dashboard > div:eq(0)").Notification();
 
 	/*
 	function load_current_page(){

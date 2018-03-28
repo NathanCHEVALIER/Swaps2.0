@@ -36,6 +36,18 @@ icon[size='30r']{
 	background-repeat: no-repeat;
 	cursor: pointer;
 }
+icon[size='30br']{
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	width: 30px;
+	height: 30px;
+	background-image: url('/ressources/images/icons.svg');
+	background-size: 30px auto;
+	background-origin: 20px 50px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
 icon[size='30l']{
 	position: absolute;
 	top: 0px;
@@ -185,6 +197,9 @@ icon[size^='30'][ic='user-grey']{
 icon[size^='30'][ic='activite-white']{
 	background-position: -4px -420px;
 }
+icon[size^='30'][ic='arrow-grey']{
+	background-position: -4px -1380px;
+}
 /****** Al 40 icons ******/
 
 icon[size^='40'][ic='img-grey']{
@@ -247,4 +262,7 @@ icon[size^='50'][ic='pen-white']{
 }
 icon[size^='50'][ic='add-grey']{
 	background-position: 1px -1200px;
+}
+icon[size^='50'][ic='options-white']{
+	background-position: 1px -1150px;
 }

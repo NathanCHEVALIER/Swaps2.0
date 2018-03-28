@@ -371,7 +371,7 @@ article.publication > div > aside:nth-of-type(2){
 	transform-origin: center center;
 	transform: rotateY(-180deg);
 	background-color: #f6f7f9;
-	box-shadow: 2px 2px 3px #bbbbbb;
+	box-shadow: 0px 1px 3px #bbbbbb;
 	border-radius: 1px;
 	overflow: hidden;
 	backface-visibility: hidden;
@@ -496,7 +496,7 @@ article.publication > div > aside:nth-of-type(2) div.lay-1-2-B > div:nth-of-type
 	font-size: 15px;
 	line-height: 15px;
 }
-article.publication > div > aside:nth-of-type(2) > div > div > div:nth-of-type(2){
+article.publication > div > aside:nth-of-type(2) > div > div:nth-of-type(2){
 	position: absolute;
 	top: 5px;
 	right: 5px;
@@ -635,12 +635,41 @@ article.publication.type2 > div > aside:nth-of-type(1) > div:nth-of-type(2) > di
 article.publication.type2 > div > aside:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div > button > icon{
     top: 2px
 }
+article.publication.type2 > div > aside:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > icon{
+	bottom: 5px;
+	right: 1px;
+	transform: rotate(0deg);
+}
 article.publication.type2 > div > aside:nth-of-type(1) > div:nth-of-type(2){
 	width: 100%;
 	min-height: calc(100% - 40px);
 }
 article.publication.type2 > div > aside:nth-of-type(1) > div.lay-3{
 	display: none;
+}
+article.publication.type2 > div > aside:nth-of-type(2) > div{
+	height: 100%;
+}
+article.publication.type2 > div > aside:nth-of-type(2) > div > div:nth-of-type(1){
+	width: calc(100% - 20px);
+	height: 95%;
+	margin: 10px 10px;
+	display: flex;
+}
+article.publication.type2 > div > aside:nth-of-type(2) > div > div > div:nth-of-type(1){
+	flex: 1;
+}
+article.publication.type2 > div > aside:nth-of-type(2) > div > div > div:nth-of-type(2){
+	flex: 1;
+	margin: 10px;
+}
+article.publication.type2 > div > aside:nth-of-type(2) > div > div > div > h4{
+	flex: 1;
+	margin: 0px;
+	padding: 0px;
+	transform: translate(10px, -10px);
+	color: #777777;
+	font-size: 17px;
 }
 /******
 Notifications
@@ -880,42 +909,21 @@ article.membercard > div:nth-of-type(2) > div:nth-of-type(3){
     margin-top: 5px;
 }
 article.membercard[size='2']{
-    width: 25vw;
+	height: 40px;
+}
+article.membercard[size='2'] > div:nth-of-type(1){
+	width: calc(100% - 70px);
+}
+article.membercard[size='2'] > div:nth-of-type(1) span{
+	color: #af0000;
+	font-size: 20px;
 }
 article.membercard[size='2'] > div:nth-of-type(2){
-    margin-top: -3px;
-    flex-direction: column;
-}
-article.membercard[size='2'] > div:nth-of-type(2) > div:nth-of-type(1){
-    padding: 3px 10px;
-    width: 100%;
-}
-article.membercard[size='2'] > div:nth-of-type(2) > div:nth-of-type(1) > h3{
-    height: 22px;
-    line-height: 22px;
-}
-article.membercard[size='2'] > div:nth-of-type(2) > div:nth-of-type(1) > q{
-    max-height: 30px;
-    padding-right: 3px;
-    overflow: hidden;
-}
-article.membercard[size='2'] > div:nth-of-type(2) > div:nth-of-type(2){
-    min-height: 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin: 0px 0px 0px 10px;
-}
-article.membercard[size='2'] > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3){
-    display: none;
-}
-article.membercard[size='2'] > div:nth-of-type(2) > div:nth-of-type(3){
-    min-width: inherit;
-    max-width: inherit;
-    flex-direction: row;
-    justify-content: flex-start;
-    padding: 5px;
-    margin: 0px;
+    margin-top: 0px;
+	width: 60px;
+	height: 40px;
+	right: 10px;
+	left: inherit;
 }
 article.membercard[size='3']{
     width: 10vw;
@@ -1394,4 +1402,18 @@ article.loader > div{
 #alertsystem > div.show{
 	transform: scale(1, 1);
 }
-
+#options{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 50px;
+	height: 100px;
+}
+#options > div{
+	position: relative;
+	width: 50px;
+	height: 50px;
+}
+#options > div > icon{
+	cursor: pointer;
+}

@@ -81,6 +81,66 @@ class Activite
 		}
 		return $this->get_activite = $retour;
 		
-    }
+	}
+	
+	public function set_participation($act_id){
+
+		if($this->get_participants(2, $_SESSION['compte']['id'], $act_id) != 0){
+			return $this->set_activite = array('retour' => false);
+		}
+
+		$req = $GLOBALS['bddL7C13']->prepare('INSERT INTO activity_participants (activityId, participantId, participantState, participationDate) VALUES(:act_id, :par_id, 1, NOW())');
+		$req->execute(array('act_id' => $act_id,
+							'par_id' => $_SESSION['user']['id']));
+		$compteur = $req->rowCount();
+
+		if($compteur == 1){
+			$id = $GLOBALS['bddL7C13']->lastInsertId();
+			return $this->set_activite = array('retour' => true, 'id' => $id);
+		}
+		else{
+			return $this->set_activite = array('retour' => false);
+		}
+	}
+
+	public function get_participants($type, $user_id, $act_id){
+		if($type == 1 && $user_id === null){
+			$req = $GLOBALS['bddL7C13']->prepare('SELECT ap.*, d.*
+												FROM activity_participants ap
+												INNER JOIN dactyle d
+												ON ap.participantId = d.dazibao
+												WHERE ap.participantState = 1
+												AND ap.activityId = :actId
+												ORDER BY ap.participationDate DESC');
+			$req->execute(array("actId" => $act_id));
+
+			$retour = array();
+			while ($donnees = $req->fetch()) {
+				$retour[] = array("id" => $donnees['dazibao'], 
+									"pseudo" => $donnees['decapode'], 
+									"type" => $donnees['diatribe'], 
+									"profil" => $donnees['dessication'],
+									);
+			}
+		}
+		elseif($type == 2 && $user_id != null){
+			$req = $GLOBALS['bddL7C13']->prepare('SELECT ap.*, d.*
+												FROM activity_participants ap
+												INNER JOIN dactyle d
+												ON ap.participantId = d.dazibao
+												WHERE ap.participantState = 1
+												AND ap.activityId = :actId
+												AND ap.participantId = :userId
+												ORDER BY ap.participationDate DESC');					
+			$req->execute(array("actId" => $act_id, "userId" => $user_id));
+
+			$req->fetch();
+			$retour = $req->rowCount();
+		}
+		else{
+
+		}
+		return $this->get_participants = $retour;
+	}
     
 }	

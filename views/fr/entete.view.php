@@ -38,6 +38,11 @@
                 </div>
                 <div></div>
             </div>
+            <div id="options" >
+                <div>
+                    <icon size="50" ic="options-white" ></icon>
+                </div>
+            </div>
         </header>
 
         <nav>

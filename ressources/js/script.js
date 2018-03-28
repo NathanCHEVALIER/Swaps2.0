@@ -48,6 +48,10 @@ $(function () {
 
 	$("#dashboard > div:eq(0)").Notification();
 
+	$("#options > div").click( function(){
+		$("body").Navigate("parametres", false);
+	});
+
 	/*
 	function load_current_page(){
         var location = window.location.toString().split("/");

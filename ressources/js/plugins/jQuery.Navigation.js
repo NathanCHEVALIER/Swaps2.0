@@ -73,6 +73,10 @@
                 title = "Activités";
                 $(this).children("aside:eq(1)").attr("schema", 1).PageActivites();
             }
+            else if(page == "parametres"){
+                title = "Paramètres";
+                $(this).children("aside:eq(1)").PageParametres();
+            }
             else if(page == "abonnes"){
                 $(this).children("aside:eq(1)").PageAbonnes();
             }
@@ -136,6 +140,25 @@
                 function(data, success){
                     $(thisObject).membreHydrator(data);
                     history.pushState({ path: this.path }, '', '/membre/' + pseudo);
+                    $("#loader").removeClass("complet");
+                },
+                "json"
+            );
+        });
+        return this;
+    };
+
+    $.fn.PageParametres = function(){
+        this.each(function(){
+            $("#loader").toggleClass("complet");
+            $(this).empty();
+            var thisObject = this;
+            $.post("/controllers/controller.php",
+                {
+                    action: 510,
+                },
+                function(data, success){
+                    history.pushState({ path: this.path }, '', '/parametres');
                     $("#loader").removeClass("complet");
                 },
                 "json"

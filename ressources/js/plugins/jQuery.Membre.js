@@ -141,40 +141,60 @@
         return this;
     };
 
-    $.fn.MemberCard = function(data){
+    $.fn.MemberCard = function(data, type){
         this.each(function(){
 
-            $content = $('\
-            <article class="membercard" id="membercard_' + data['id'] + '" size="1" >\
-                <div class="moy-profil" style="background-image:  url(\'/publicfiles/' + data['id'] + '/profil_' + data['profil'] + '\');"></div>\
-                <div>\
-                    <div>\
-                        <h3>' + data['pseudo'] + '</h3>\
-                        <q>' + data['description'] + '</q>\
-                    </div>\
-                    <div>\
-                        <div class="geopoint">\
-                            <icon size="30l" ic="geopoint-grey"></icon>\
-                            Paris, France\
+            if(type == 1){
+                $content = $('\
+                <article class="membercard" data="' + data['id'] + '" size="2" >\
+                    <div class="lay-1-2-A" >\
+                        <div class="mini-profil" style="background-image: url(\'/publicfiles/' + data['id'] + '/profil_'  + data['profil'] + '\');">\
                         </div>\
-                        <div class="valuation">\
-                            <icon size="30l" ic="valuation-yellow"></icon>\
-                            4.7 pour 58 votes\
-                        </div>\
-                        <div class="pointscounter">\
-                            <icon size="30l" ic="points-classic"></icon>\
-                            37895 pts\
+                        <div>\
+                            <div>\
+                                <span><a href="/membre/' + data['pseudo'] + '">' + data['pseudo'] + '</a></span>\
+                            </div>\
                         </div>\
                     </div>\
                     <div>\
                     </div>\
-                </div>\
-            </article>');
+                </article>');
 
-            $(this).append($content);
+                $(this).append($content);
+                $('.membercard[size="2"][data="' + data['id'] + '"] > div:eq(1)').Abonnement(2, data['id']);
+            }
+            else if(type == 2){
+                $content = $('\
+                <article class="membercard" data="' + data['id'] + '" size="1" >\
+                    <div class="moy-profil" style="background-image:  url(\'/publicfiles/' + data['id'] + '/profil_' + data['profil'] + '\');"></div>\
+                    <div>\
+                        <div>\
+                            <h3>' + data['pseudo'] + '</h3>\
+                            <q>' + data['description'] + '</q>\
+                        </div>\
+                        <div>\
+                            <div class="geopoint">\
+                                <icon size="30l" ic="geopoint-grey"></icon>\
+                                Paris, France\
+                            </div>\
+                            <div class="valuation">\
+                                <icon size="30l" ic="valuation-yellow"></icon>\
+                                4.7 pour 58 votes\
+                            </div>\
+                            <div class="pointscounter">\
+                                <icon size="30l" ic="points-classic"></icon>\
+                                37895 pts\
+                            </div>\
+                        </div>\
+                        <div>\
+                        </div>\
+                    </div>\
+                </article>');
 
-            $("#membercard_" + data['id'] + " > div:eq(1) > div:eq(2)").Abonnement(data['id']);
+                $(this).append($content);
 
+                $('.membercard[size="1"][data="' + data['id'] + '"] > div:eq(1) > div:eq(2)').Abonnement(data['id']);
+            }
 
         });
         return this;

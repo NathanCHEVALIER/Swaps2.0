@@ -93,6 +93,14 @@
                     $retour = $activite->get_activite(2, htmlspecialchars($_POST['id']));
                     echo json_encode($retour);
                 }
+                elseif($action == 220 && !empty($_POST['id']) ){//participate in an activity
+                    $retour = $activite->set_participation(htmlspecialchars($_POST['id']));
+                    echo json_encode($retour);
+                }
+                elseif($action == 221 && !empty($_POST['id']) ){//participants in an activity
+                    $retour = $activite->get_participants(1, null, htmlspecialchars($_POST['id']));
+                    echo json_encode($retour);
+                }
                 else{
 
                 } 
@@ -140,6 +148,10 @@
             elseif(($action >= 500) && ($action < 600)){//Notifs et recherche
                 if($action == 501){
                     $retour = $notification->get_notifications();
+                    echo json_encode($retour);
+                }
+                if($action == 510){
+                    $retour = false;
                     echo json_encode($retour);
                 }
                 else{

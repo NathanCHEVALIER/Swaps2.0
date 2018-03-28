@@ -1,11 +1,11 @@
 (function($) {
 
-    $.fn.Abonnement = function(id){
+    $.fn.Abonnement = function(type, id){
         this.each(function(){
 
             var thisObject = this;            
             $content = $('\
-            <button class="btn-abo"  data="' + id + '">\
+            <button class="btn-abo" size="' + type + '" data="' + id + '">\
                 <icon size="30l" ic="favori-white"></icon>\
             </button>');
 
@@ -23,14 +23,27 @@
             );
 
             function get_etat_abo(etat){
-                if(etat == 1 || etat == 4){
-                    $(".btn-abo[data='" + id + "']").html('<icon size="30l" ic="follow-white"></icon>S\'abonner');
+                if(type == 1){
+                    if(etat == 1 || etat == 4){
+                        $(".btn-abo[data='" + id + "']").html('<icon size="30l" ic="follow-white"></icon>S\'abonner');
+                    }
+                    else if(etat == 2){
+                        $(".btn-abo[data='" + id + "']").html('<icon size="30l" ic="followed-white"></icon>Abonné');
+                    }
+                    else if(etat == 3){
+                        $(".btn-abo[data='" + id + "']").html('<icon size="30l" ic="favori-white"></icon>Demandé');
+                    }
                 }
-                else if(etat == 2){
-                    $(".btn-abo[data='" + id + "']").html('<icon size="30l" ic="followed-white"></icon>Abonné');
-                }
-                else if(etat == 3){
-                    $(".btn-abo[data='" + id + "']").html('<icon size="30l" ic="favori-white"></icon>Demandé');
+                else if(type == 2){
+                    if(etat == 1 || etat == 4){
+                        $(".btn-abo[data='" + id + "']").html('<icon size="30l" ic="follow-white"></icon>');
+                    }
+                    else if(etat == 2){
+                        $(".btn-abo[data='" + id + "']").html('<icon size="30l" ic="followed-white"></icon>');
+                    }
+                    else if(etat == 3){
+                        $(".btn-abo[data='" + id + "']").html('<icon size="30l" ic="favori-white"></icon>');
+                    }
                 }
             }
 

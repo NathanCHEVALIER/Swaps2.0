@@ -75,9 +75,9 @@
                         <div>\
                             <div>\
                             </div>\
-                            <div>\
-                                <icon size="30r" ic="cross-grey" />\
-                            </div>\
+                        </div>\
+                        <div>\
+                            <icon size="30r" ic="cross-grey" />\
                         </div>\
                         <form method="post" action="">\
                             <div>\

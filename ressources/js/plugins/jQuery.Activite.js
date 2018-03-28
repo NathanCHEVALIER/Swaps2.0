@@ -3,7 +3,7 @@
     $.fn.ActiviteHydrator = function(publication){
         this.each(function(){
             
-            var $activite = $('<article class="publication type2" id="publication_5">\
+            var $activite = $('<article class="publication type2" id="publication_' + publication['id_activite'] + '">\
             <div>\
                 <aside>\
                     <div class="lay-1-2-A" >\
@@ -37,56 +37,70 @@
                             <icon size="30br" ic="arrow-grey"></icon>\
                         </div>\
                     </div>\
-                    <div class="lay-3">\
-                        <div>\
-                            <div>\
-                                <div class="star">\
-                                    <div class="star">\
-                                        <div class="star">\
-                                            <div class="star">\
-                                                <div class="star">\
-                                                    <div class="starr5"></div>\
-                                                </div>\
-                                                <div class="starr4"></div>\
-                                            </div>\
-                                            <div class="starr3"></div>\
-                                        </div>\
-                                        <div class="starr2"></div>\
-                                    </div>\
-                                    <div class="starr1"></div>\
-                                </div>\
-                            </div>\
-                        </div>\
-                        <div>\
-                            <icon size="30" ic="comment" />\
-                        </div>\
-                        <div>\
-                            <icon size="30" ic="share" />\
-                        </div>\
-                    </div>\
                 </aside>\
                 <aside>\
                     <div>\
                         <div>\
-                            <div>\
-                            </div>\
-                            <div>\
-                                <icon size="30r" ic="cross-grey" />\
-                            </div>\
+                            <div><h4>Conversation</h4></div>\
+                            <div><h4>Participants</h4></div>\
                         </div>\
-                        <form method="post" action="">\
-                            <div>\
-                                <textarea name="commentaire" placeholder="Commentez..."></textarea>\
-                                <input value="Send" type="submit">\
-                            </div>\
-                            <div></div>\
-                        </form>\
+                        <div>\
+                            <icon size="30r" ic="cross-grey" />\
+                        </div>\
                     </div>\
                 </aside>\
             </div>\
         </article>');
 
         $(this).append($activite);
+
+        $('article#publication_' + publication['id_activite'] + '.type2 icon[ic="arrow-grey"]').click( function(){
+            $(this).parents(".publication").addClass("reverse");
+        });
+
+        $('article#publication_' + publication['id_activite'] + '.type2 icon[ic="cross-grey"]').click( function(){
+            $(this).parents(".publication").removeClass("reverse");
+        });
+
+        $('article#publication_' + publication['id_activite'] + '.type2 aside:eq(0) > div:eq(1) > div > div:eq(2) > button').click( function(){
+            participate(publication['id_activite']);
+        });
+
+        function participate(id) {
+            $.post("/controllers/controller.php",
+                {
+                    action: 220,
+                    id: id,
+                },
+                function (data){
+                    if(data['retour'] == true){
+                        $("body").AlertNotification("success", "Vous êtes à présent participant de l'activité \"" + publication['titre_activite'] + "\"");
+                    }
+                    else{
+                        $("body").AlertNotification("error", "Une erreur est survenue!");
+                    }
+                },
+                "json"
+            );
+        }
+
+        participants(publication['id_activite']);
+
+        function participants(id) {
+            $.post("/controllers/controller.php",
+                {
+                    action: 221,
+                    id: id,
+                },
+                function(data, success){
+                    for (var i = 0; i < data.length; i++) {
+                        $('article#publication_' + publication['id_activite'] + '.type2 aside:eq(1) > div:eq(0) > div:eq(0) > div:eq(1)').MemberCard(data[i], 1);
+                    }
+                    $('article#publication_' + publication['id_activite'] + '.type2 aside:eq(0) > div:eq(1) > div > div:eq(2) > button').html('<icon size="30l" ic="activite-white"></icon>Je participe (' + data.length + '/' + publication['nbparticipants'] + ')');
+                },
+                "json"
+            );
+        }
 
         });
         return this;

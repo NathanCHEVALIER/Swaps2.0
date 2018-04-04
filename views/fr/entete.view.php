@@ -46,6 +46,13 @@
         </header>
 
         <nav>
+            <div id="message">
+                <div class="bulle-message" ></div>
+                <div class="bulle-message" ></div>
+                <div class="bulle-message" ></div>
+                <div class="bulle-message" ></div>
+                <div class="bulle-message" ></div>
+            </div>
             <div id="btn-menu" class="menu-open">
                 <div></div>
                 <div></div>
@@ -68,6 +75,30 @@
                 </div>
             </div>
         </nav>
+
+        <div id="mess-conv" >
+            <div>
+                pierre.dupont
+                <icon size="30r" ic="cross-grey" />
+            </div>
+            <div>
+                <div class="bulle">
+                    <div></div>
+                    Lorem ipsum et dolor sit amen
+                    Lorem ipsum et dolor sit amen
+                    Lorem ipsum et dolor sit amen
+                </div>
+                <div class="bulle">
+                    <div></div>
+                    Yo bro'
+                </div>
+            </div>
+            <div></div>
+            <div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
 
         <div id="alertsystem" >
         </div>

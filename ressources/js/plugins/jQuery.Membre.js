@@ -161,7 +161,8 @@
                 </article>');
 
                 $(this).append($content);
-                $('.membercard[size="2"][data="' + data['id'] + '"] > div:eq(1)').Abonnement(2, data['id']);
+                $($content).children("div:eq(1)").Abonnement(2, data['id']);
+                //$('.membercard[size="2"][data="' + data['id'] + '"] > div:eq(1)').Abonnement(2, data['id']);
             }
             else if(type == 2){
                 $content = $('\
@@ -193,7 +194,7 @@
 
                 $(this).append($content);
 
-                $('.membercard[size="1"][data="' + data['id'] + '"] > div:eq(1) > div:eq(2)').Abonnement(data['id']);
+                $('.membercard[size="1"][data="' + data['id'] + '"] > div:eq(1) > div:eq(2)').Abonnement(2, data['id']);
             }
 
         });

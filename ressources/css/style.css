@@ -135,7 +135,7 @@ section{
 	position: fixed;
 	top: 90vh;
 	left: 0px;
-	background-color: #e9ebee;
+	background-color: #ebebeb;
 	width: 100vw;
 	height: calc(100vh + 50px);
 	opacity: 1;
@@ -299,6 +299,23 @@ nav > #btn-menu.menu-open > div:nth-of-type(2){
 nav > #btn-menu.menu-open > div:nth-of-type(3){
 	top: 28px;
 	transform: rotate(-45deg);
+}
+nav #message{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	position: absolute;
+	bottom: 250px;
+	right: 0px;
+	width: 60px;
+	height: calc(100vh - 350px);
+}
+#message > .bulle-message{
+	width: 60px;
+	height: 60px;
+	border-radius: 50px;
+	background-color: turquoise;
+	margin: 10px 0px;
 }
 /****** 
 Volet Supérieur 
@@ -708,6 +725,8 @@ section#membre > aside:nth-of-type(2) > article:nth-of-type(1){
 	width: 100%;
 	height: 400px;
 	background-color: teal;
+	background-size: cover;
+	background-position: center center;
 }
 section#membre > aside:nth-of-type(2) > article:nth-of-type(1) > div.big-profil{
 	position: absolute;
@@ -1416,4 +1435,99 @@ article.loader > div{
 }
 #options > div > icon{
 	cursor: pointer;
+}
+
+#mess-conv{
+	width: 22vw;
+	height: 96vh;
+	background-color: #ffffff;
+	border: 1px solid #dddddd;
+	border-radius: 30px;
+	position: absolute;
+	top: 2vh;
+	right: 115px;
+	z-index: 3000;
+}
+#mess-conv > div:nth-of-type(1){
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: calc(100% - 20px); 
+	height: 50px;
+	background-color: #eeeeee;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	line-height: 50px;
+	color: #444444;
+	padding-left: 20px;
+}
+#mess-conv > div:nth-of-type(2){
+	position: absolute;
+	top: 60px;
+	left: 10px;
+	width: calc(100% - 20px); 
+	height: calc(96vh - 130px);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+#mess-conv > div:nth-of-type(3){
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	width: calc(100% - 20px); 
+	height: 50px;
+	border-radius: 25px;
+	background-color: #eeeeee;
+}
+#mess-conv > div:nth-of-type(4){
+	display: block;
+	position: absolute;
+	top: 405px;
+	right: -32px;
+	width: 30px; 
+	height: 30px;
+}
+#mess-conv > div:nth-of-type(4) > div:nth-of-type(1){
+	position: absolute;
+	top: -1px;
+	right: -3px;
+	width: 0px; 
+	height: 0px;
+	border: transparent 13px solid;
+	border-left: 22px solid #dddddd;
+}
+#mess-conv > div:nth-of-type(4) > div:nth-of-type(2){
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 0px; 
+	height: 0px;
+	border: transparent 12px solid;
+	border-left: 20px solid  #ffffff;
+}
+
+.bulle{
+	position: relative;
+	right: 10px;
+	max-width: calc(16vw - 20px);
+	min-width: 80px;
+	padding: 10px;
+	margin: 5px 0px;
+	background-color: #fe8a16;
+	border-radius: 15px;
+	color: #ffffff;
+	line-height: 20px;
+	font-size: 17px;
+}
+.bulle > div:nth-of-type(1){
+	position: absolute;
+	top: 0px;
+	right: -10px;
+	width: 0px; 
+	height: 0px;
+	border: transparent 13px solid;
+	border-top: 15px solid #fe8a16;
+	border-left: transparent 15px solid;
 }

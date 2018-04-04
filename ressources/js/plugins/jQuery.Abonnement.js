@@ -25,24 +25,24 @@
             function get_etat_abo(etat){
                 if(type == 1){
                     if(etat == 1 || etat == 4){
-                        $(".btn-abo[data='" + id + "']").html('<icon size="30l" ic="follow-white"></icon>S\'abonner');
+                        $(".btn-abo[data='" + id + "']").html('<icon size="30" ic="follow-white"></icon>S\'abonner');
                     }
                     else if(etat == 2){
-                        $(".btn-abo[data='" + id + "']").html('<icon size="30l" ic="followed-white"></icon>Abonné');
+                        $(".btn-abo[data='" + id + "']").html('<icon size="30" ic="followed-white"></icon>Abonné');
                     }
                     else if(etat == 3){
-                        $(".btn-abo[data='" + id + "']").html('<icon size="30l" ic="favori-white"></icon>Demandé');
+                        $(".btn-abo[data='" + id + "']").html('<icon size="30" ic="favori-white"></icon>Demandé');
                     }
                 }
                 else if(type == 2){
                     if(etat == 1 || etat == 4){
-                        $(".btn-abo[data='" + id + "']").html('<icon size="30l" ic="follow-white"></icon>');
+                        $(".btn-abo[data='" + id + "']").html('<icon size="30" ic="follow-white"></icon>');
                     }
                     else if(etat == 2){
-                        $(".btn-abo[data='" + id + "']").html('<icon size="30l" ic="followed-white"></icon>');
+                        $(".btn-abo[data='" + id + "']").html('<icon size="30" ic="followed-white"></icon>');
                     }
                     else if(etat == 3){
-                        $(".btn-abo[data='" + id + "']").html('<icon size="30l" ic="favori-white"></icon>');
+                        $(".btn-abo[data='" + id + "']").html('<icon size="30" ic="favori-white"></icon>');
                     }
                 }
             }
